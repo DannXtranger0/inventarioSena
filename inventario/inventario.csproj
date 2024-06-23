@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="categoria_agricultura.png" />
+    <None Remove="categoria_herramientas.png" />
+    <None Remove="categoria_informatica.png" />
+    <None Remove="categoria_todos.png" />
+    <None Remove="login.png" />
+    <None Remove="Views\categoria_todos.png" />
+    <None Remove="Views\historial_prestamos.png" />
+    <None Remove="Views\icono_lupa.png" />
+    <None Remove="Views\portero.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="categoria_agricultura.png" />
+    <Resource Include="categoria_herramientas.png" />
+    <Resource Include="categoria_informatica.png" />
+    <Resource Include="categoria_todos.png" />
+    <Resource Include="login.png" />
+    <Resource Include="Views\categoria_todos.png" />
+    <Resource Include="Views\historial_prestamos.png" />
+    <Resource Include="Views\icono_lupa.png" />
+    <Resource Include="Views\portero.png" />
+  </ItemGroup>
+
+</Project>

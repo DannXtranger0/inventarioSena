@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Views\Agregar_producto.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_agricultura.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_agricultura_admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_herramientas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_herramientas_admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_informatica.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_informatica_admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_todos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Categoria_todos_admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\InventarioAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Inventario_admin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PantallaAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Agregar_producto.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_agricultura.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_agricultura_admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_herramientas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_herramientas_admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_informatica.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_informatica_admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_todos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Categoria_todos_admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\InventarioAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Inventario_admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PantallaAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
