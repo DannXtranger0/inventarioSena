@@ -36,16 +36,17 @@ namespace inventario
         private void btn_iniciar_Click(object sender, RoutedEventArgs e)
         {
             //frame_principal.Navigate(new InventarioAdmin());
-            InventarioAdmin inventarioAdmin = new InventarioAdmin();
-            inventarioAdmin.Show();
-            this.Close(); 
+            //InventarioAdmin inventarioAdmin = new InventarioAdmin();
+            //inventarioAdmin.Show();
+            //this.Close();
+            PantallaAdmin ventanaAdmin = new PantallaAdmin();
+            ventanaAdmin.Show();
+            Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            PantallaAdmin ventanaAdmin = new PantallaAdmin();
-            ventanaAdmin.Show();
-            Close();
+           
 
         }
     }

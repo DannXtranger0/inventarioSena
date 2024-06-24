@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Registrar_usuario.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Registro_personas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Agregar_producto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,6 +40,9 @@
     <Compile Update="Views\Categoria_todos_admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Editar_producto.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\InventarioAdmin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +55,12 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Registrar_usuario.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Registro_personas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Agregar_producto.xaml">
@@ -73,6 +88,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Categoria_todos_admin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Editar_producto.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\InventarioAdmin.xaml">

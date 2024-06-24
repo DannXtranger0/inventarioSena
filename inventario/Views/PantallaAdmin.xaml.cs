@@ -22,12 +22,18 @@ namespace inventario.Views
         public PantallaAdmin()
         {
             InitializeComponent();
+            frame_principal.Navigate(new Registro_personas());
         }
 
         private void btn_inventario(object sender, RoutedEventArgs e)
         {
         Inventario_admin inventario_admin = new Inventario_admin();
             inventario_admin.Show();
+        }
+
+        private void frame_principal_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+        {
+
         }
     }
 }

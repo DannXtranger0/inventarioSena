@@ -1,0 +1,113 @@
+﻿<Page x:Class="inventario.Registrar_usuario"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:inventario"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Registrar_usuario">
+    <Grid Background="White" Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Asignar cuenta de usuario"
+               HorizontalAlignment="Left" 
+               Margin="6,10,0,0" 
+               VerticalAlignment="Top" 
+               FontSize="16" 
+               FontWeight="Bold" Grid.Column="1"/>
+
+        <Label Content="Número de Documento" 
+               Grid.Row="1" 
+               HorizontalAlignment="Right" 
+               Margin="10" 
+               VerticalAlignment="Center"/>
+        <TextBox Grid.Row="1" 
+                 Grid.Column="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="10" 
+                 VerticalAlignment="Center" 
+                 Width="200" 
+                 Name="numero_documento_txt"
+                 BorderBrush="Gray"
+                 BorderThickness="1"
+                 Padding="5"/>
+
+        <Label Content="Rol" 
+               Grid.Row="2" 
+               HorizontalAlignment="Right" 
+               Margin="10" 
+               VerticalAlignment="Center"/>
+        <ComboBox Grid.Row="2" 
+                  Grid.Column="1" 
+                  HorizontalAlignment="Left" 
+                  Margin="10" 
+                  VerticalAlignment="Center" 
+                  Width="200" 
+                  Name="roles"
+                  BorderBrush="Gray"
+                  BorderThickness="1"
+                  Padding="5"/>
+
+        <Label Content="Nombre de usuario" 
+               Grid.Row="3" 
+               HorizontalAlignment="Right" 
+               Margin="10" 
+               VerticalAlignment="Center"/>
+        <TextBox Grid.Row="3" 
+                 Grid.Column="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="10" 
+                 VerticalAlignment="Center" 
+                 Width="200" 
+                 Name="usuario_txt"
+                 BorderBrush="Gray"
+                 BorderThickness="1"
+                 Padding="5"/>
+
+        <Label Content="Contraseña" 
+               Grid.Row="4" 
+               HorizontalAlignment="Right" 
+               Margin="10" 
+               VerticalAlignment="Center"/>
+        <TextBox Grid.Row="4" 
+                 Grid.Column="1" 
+                 HorizontalAlignment="Left" 
+                 Margin="10" 
+                 VerticalAlignment="Center" 
+                 Width="200" 
+                 Name="contraseña_txt"
+                 BorderBrush="Gray"
+                 BorderThickness="1"
+                 Padding="5"
+                 />
+
+        <Button Content="Crear usuario" 
+                Grid.Row="5"
+                HorizontalAlignment="Left" 
+                Margin="12,20,0,0" 
+                VerticalAlignment="Top" 
+                Width="200" 
+                Foreground="White"
+                Name="btn_registro" 
+                Click="btn_registro_Click"
+                Background="Green"
+                BorderBrush="White"
+                BorderThickness="1"
+                Padding="5"
+                FontSize="14"
+                FontWeight="Bold" Grid.Column="1" Grid.RowSpan="2"/>
+    </Grid>
+</Page>

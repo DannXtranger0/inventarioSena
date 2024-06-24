@@ -24,7 +24,7 @@ namespace inventario.Views
         {
 
             InitializeComponent();
-            //getElementos();
+            frame_principal.Navigate(new Categoria_todos_admin());
         }
         public void getElementos()
         {

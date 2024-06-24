@@ -76,15 +76,16 @@ namespace inventario.Views
             }
         }
 
-        private void txtbuscado_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            buscarDatos();
-
-        }
+        
 
         private void data_productos_informatica_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void txtbuscado_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            buscarDatos();
         }
     }
 }

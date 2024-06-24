@@ -198,6 +198,6 @@
             </Button>
 
         </StackPanel>
-        <Frame x:Name="frame_principal" Margin="0,106,0,0"/>
+        <Frame x:Name="frame_principal"  Margin="0,106,0,0" Navigated="frame_principal_Navigated"/>
     </Grid>
 </Window>

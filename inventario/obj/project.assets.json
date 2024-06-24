@@ -4240,19 +4240,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dann\\.nuget\\packages\\": {}
+    "C:\\Users\\user\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dann\\Inventario\\inventario\\inventario.csproj",
+      "projectUniqueName": "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\inventario.csproj",
       "projectName": "inventario",
-      "projectPath": "C:\\Users\\Dann\\Inventario\\inventario\\inventario.csproj",
-      "packagesPath": "C:\\Users\\Dann\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dann\\Inventario\\inventario\\obj\\",
+      "projectPath": "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\inventario.csproj",
+      "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Dann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

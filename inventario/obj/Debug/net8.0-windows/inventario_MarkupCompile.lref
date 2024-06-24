@@ -1,16 +1,19 @@
 ﻿
 
-FC:\Users\Dann\Inventario\inventario\MainWindow.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Agregar_producto.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_agricultura.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_herramientas.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_informatica.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_todos.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_todos_admin.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\InventarioAdmin.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Inventario_admin.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\PantallaAdmin.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_agricultura_admin.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_herramientas_admin.xaml;;
-FC:\Users\Dann\Inventario\inventario\Views\Categoria_informatica_admin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\MainWindow.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Registrar_usuario.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Registro_personas.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Agregar_producto.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_agricultura.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_agricultura_admin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_herramientas.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_herramientas_admin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_informatica.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_informatica_admin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_todos.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Categoria_todos_admin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Editar_producto.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\InventarioAdmin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\Inventario_admin.xaml;;
+FC:\Users\user\source\repos\inventarioSena\inventario\Views\PantallaAdmin.xaml;;
 

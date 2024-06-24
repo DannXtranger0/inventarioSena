@@ -141,7 +141,7 @@
 
             <Border BorderBrush="Black" BorderThickness="2" CornerRadius="8" Margin="35,-4,442,0" Grid.Column="2">
 
-                <TextBox Style="{DynamicResource estiloTextBox}"  Grid.Column="2" Grid.Row="0" x:Name="txtbuscado" Margin="4,1,8,1" BorderBrush="{x:Null}" Padding="30,0,0,0"  SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="20">
+                <TextBox Style="{DynamicResource estiloTextBox}"  Grid.Column="2" Grid.Row="0" x:Name="txtbuscado" Margin="4,1,8,1" BorderBrush="{x:Null}" Padding="30,0,0,0"  SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="20" TextChanged="txtbuscado_TextChanged_1">
                     <TextBox.Background>
                         <ImageBrush ImageSource="/Views/icono_lupa.png"
                                 Stretch="None"
@@ -154,13 +154,13 @@
 
 
         <DataGrid Name="dataproductos" 
-IsReadOnly="True"
-CanUserAddRows="False" 
-CanUserDeleteRows="False" 
-AutoGenerateColumns="False" 
-Margin="87,62,116,10" 
-HorizontalScrollBarVisibility="Auto"
-Grid.Row="1" Grid.RowSpan="2">
+            IsReadOnly="True"
+            CanUserAddRows="False" 
+            CanUserDeleteRows="False" 
+            AutoGenerateColumns="False" 
+            Margin="87,62,116,10" 
+            HorizontalScrollBarVisibility="Auto"
+            Grid.Row="1" Grid.RowSpan="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Código" Binding="{Binding cd}" Width="*"/>
                 <DataGridTextColumn Header="Nombre" Binding="{Binding nm}" Width="*"/>
@@ -174,11 +174,11 @@ Grid.Row="1" Grid.RowSpan="2">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="btneliminar"   CommandParameter="{Binding id}" Margin="5">
-                                    <Image Width="16" Source="C:\Users\user\source\repos\sena_inventario\Proyecto_inventario\views\eliminar.png" Margin="0,0,5,0"></Image>
+                                <Button x:Name="btneliminar"   CommandParameter="{Binding id}" Click="btneliminar_Click_1" Margin="5">
+                                    <Image Width="16" Source="C:\Users\user\source\repos\inventarioSena\inventario\Views\eliminar.png" Margin="0,0,5,0"></Image>
                                 </Button>
-                                <Button  Name="btneditar" Margin="5" CommandParameter="{Binding id}">
-                                    <Image Width="16" Source="C:\Users\user\source\repos\sena_inventario\Proyecto_inventario\views\editar.png" Margin="0,0,5,0"></Image>
+                                <Button  Name="btneditar" Margin="5" CommandParameter="{Binding id}" Click="btneditar_Click">
+                                    <Image Width="16" Source="C:\Users\user\source\repos\inventarioSena\inventario\Views\editar.png" Margin="0,0,5,0"></Image>
                                 </Button>
                             </StackPanel>
                         </DataTemplate>
@@ -186,6 +186,6 @@ Grid.Row="1" Grid.RowSpan="2">
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" Content="Agregar nuevo producto" HorizontalAlignment="Left" Margin="600,0,0,0" VerticalAlignment="Center" Width="231"  Height="50" Background="#FF10CD00" Foreground="White" FontSize="18" BorderBrush="{x:Null}"/>
+        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" Content="Agregar nuevo producto" HorizontalAlignment="Left" Margin="600,0,0,3" VerticalAlignment="Bottom" Width="231"  Height="50" Background="#FF10CD00" Foreground="White" FontSize="18" Click="btnagregar_Click" BorderBrush="{x:Null}"/>
     </Grid>
 </Page>
