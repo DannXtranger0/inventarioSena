@@ -186,6 +186,6 @@ Grid.Row="1" Grid.RowSpan="2">
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" Content="Agregar nuevo producto" HorizontalAlignment="Left" Margin="600,0,0,0" VerticalAlignment="Center" Width="231"  Height="50" Background="#FF10CD00" Foreground="White" FontSize="18" BorderBrush="{x:Null}"/>
+        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" Content="Agregar nuevo producto" HorizontalAlignment="Left" Margin="600,0,0,0" VerticalAlignment="Center" Width="231"  Height="50" Background="#FF10CD00" Foreground="White" FontSize="18" BorderBrush="{x:Null}" />
     </Grid>
 </Page>

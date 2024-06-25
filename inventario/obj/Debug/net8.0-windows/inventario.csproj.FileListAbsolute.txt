@@ -311,7 +311,6 @@ C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Vi
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Categoria_informatica_admin.g.cs
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Categoria_todos.g.cs
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Categoria_todos_admin.g.cs
-C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\InventarioAdmin.g.cs
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Inventario_admin.g.cs
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\PantallaAdmin.g.cs
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\App.g.cs
@@ -444,7 +443,6 @@ C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Vi
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Categoria_informatica_admin.baml
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Categoria_todos.baml
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Categoria_todos_admin.baml
-C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\InventarioAdmin.baml
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Inventario_admin.baml
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\PantallaAdmin.baml
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\inventario.g.resources
@@ -465,3 +463,5 @@ C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Re
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Registrar_usuario.baml
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Editar_producto.g.cs
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Editar_producto.baml
+C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Login.g.cs
+C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Login.baml

@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Registrar_usuario.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,9 +46,6 @@
     <Compile Update="Views\Editar_producto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\InventarioAdmin.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Views\Inventario_admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +54,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -91,9 +94,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Editar_producto.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Views\InventarioAdmin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Inventario_admin.xaml">
