@@ -40,7 +40,7 @@
                  Margin="10" 
                  VerticalAlignment="Center" 
                  Width="200" 
-                 Name="numero_documento_txt"
+                 Name="documento_txt"
                  BorderBrush="Gray"
                  BorderThickness="1"
                  Padding="5"/>
@@ -51,15 +51,16 @@
                Margin="10" 
                VerticalAlignment="Center"/>
         <ComboBox Grid.Row="2" 
+                  
                   Grid.Column="1" 
                   HorizontalAlignment="Left" 
                   Margin="10" 
                   VerticalAlignment="Center" 
                   Width="200" 
-                  Name="roles"
+                  Name="roles_usuario"
                   BorderBrush="Gray"
                   BorderThickness="1"
-                  Padding="5"/>
+                  Padding="5" />
 
         <Label Content="Nombre de usuario" 
                Grid.Row="3" 
@@ -72,10 +73,10 @@
                  Margin="10" 
                  VerticalAlignment="Center" 
                  Width="200" 
-                 Name="usuario_txt"
+                 Name="txt_usuario"
                  BorderBrush="Gray"
                  BorderThickness="1"
-                 Padding="5"/>
+                 Padding="5" />
 
         <Label Content="Contraseña" 
                Grid.Row="4" 
@@ -91,7 +92,7 @@
                  Name="contraseña_txt"
                  BorderBrush="Gray"
                  BorderThickness="1"
-                 Padding="5"
+                 Padding="5" 
                  />
 
         <Button Content="Crear usuario" 

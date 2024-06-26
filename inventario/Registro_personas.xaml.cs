@@ -107,11 +107,12 @@ namespace inventario
             registrar_perso();
         }
 
-        private void btnusuario_Click(object sender, RoutedEventArgs e)
+        
+
+        private void btnusuario_Click_1(object sender, RoutedEventArgs e)
         {
             NavigationService navService = NavigationService.GetNavigationService(this);
             navService?.Navigate(new Registrar_usuario());
-
         }
     }
 }

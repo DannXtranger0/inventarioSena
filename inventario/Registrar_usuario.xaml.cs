@@ -1,6 +1,7 @@
 ﻿using inventario.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,36 +22,62 @@ namespace inventario
     /// </summary>
     public partial class Registrar_usuario : Page
     {
-        public Registrar_usuario()
+        public Registrar_usuario() 
         {
             InitializeComponent();
-            getRoles();
+             GetRoles();
         }
-
-        public void getRoles()
+        private void GetRoles()
         {
             using (SenaInventarioContext db = new SenaInventarioContext())
             {
-                var roles_usuario = db.Roles.ToList();
-                roles.ItemsSource = roles_usuario;
-                roles.SelectedValuePath = "Id";
-                roles.DisplayMemberPath = "NombreRol";
-            }
-        }
+                var rolesUsuario = db.Roles.ToList();
+              
+                roles_usuario.ItemsSource = rolesUsuario;
+                roles_usuario.SelectedValuePath = "Id";
+                roles_usuario.DisplayMemberPath = "NombreRol";
 
-        public void crear_usuario()
-        {
-            using(SenaInventarioContext db = new SenaInventarioContext())
-            {
-                Usuario nuevo_usuario = new Usuario();
                 
             }
         }
-        
+
+        private void CrearUsuario()
+        {
+            using (SenaInventarioContext db = new SenaInventarioContext())
+            {
+                Usuario nuevo_usuario = new Usuario();
+                // Obtener el ID de la persona a partir del número de documento
+                int personaId = db.Personas.Where(p => p.NumeroDocumento == documento_txt.Text)
+                                          .Select(p => p.Id)
+                                          .FirstOrDefault();
+
+                 //mensaje de error si el numero de documento no esta registrado
+                if (personaId==0)
+                {
+                    MessageBox.Show("El numero de documento no existe");
+                }
+                else
+                {
+                    nuevo_usuario.IdPersona = personaId;
+                    nuevo_usuario.IrRol = ((Role)roles_usuario.SelectedItem).Id;
+                    nuevo_usuario.NombreUsuario = txt_usuario.Text;
+                    nuevo_usuario.Contrasena = contraseña_txt.Text;
+
+
+                    db.Usuarios.Add(nuevo_usuario);
+                    db.SaveChanges();
+
+                }
+
+            }
+        }
 
         private void btn_registro_Click(object sender, RoutedEventArgs e)
         {
-            crear_usuario();
-        } 
+            CrearUsuario();
+        }
+
+
+       
     }
 }

@@ -108,7 +108,7 @@
                 Padding="5"
                 FontSize="14"
                 FontWeight="Bold" Grid.Column="1"/>
-        <Button Grid.Column="1" Name="btnusuario" Click="btnusuario_Click" Content="Crear  usuario" HorizontalAlignment="Left" Margin="347,10,0,0" VerticalAlignment="Top" Height="29" Width="129" Grid.Row="5"/>
+        <Button Grid.Column="1" Name="btnusuario" Click="btnusuario_Click_1" Content="Crear  usuario" HorizontalAlignment="Left" Margin="347,10,0,0" VerticalAlignment="Top" Height="29" Width="129" Grid.Row="5"/>
     </Grid>
 
 </Page>

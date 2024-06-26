@@ -62,8 +62,8 @@ namespace inventario
                     Usuario usua = db.Usuarios.FirstOrDefault(us => us.NombreUsuario == usuario);
                     if ((contrasenia == usua.Contrasena))
                     {
-                        Inventario_admin inventario_Admin = new Inventario_admin();
-                        inventario_Admin.Show();
+                        PantallaAdmin pantallaAdmin = new PantallaAdmin();
+                        pantallaAdmin.Show();
                         this.Close();
                     }
                     else
