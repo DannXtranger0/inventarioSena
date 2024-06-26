@@ -66,7 +66,7 @@ namespace inventario
 
                     db.Usuarios.Add(nuevo_usuario);
                     db.SaveChanges();
-
+                    MessageBox.Show("Registro exitoso");
                 }
 
             }
