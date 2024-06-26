@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\inventario.csproj": {}
+    "C:\\Users\\Dann\\inventarioSena\\inventario\\inventario.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\inventario.csproj": {
+    "C:\\Users\\Dann\\inventarioSena\\inventario\\inventario.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\inventario.csproj",
+        "projectUniqueName": "C:\\Users\\Dann\\inventarioSena\\inventario\\inventario.csproj",
         "projectName": "inventario",
-        "projectPath": "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\inventario.csproj",
-        "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\source\\repos\\inventarioSena\\inventario\\obj\\",
+        "projectPath": "C:\\Users\\Dann\\inventarioSena\\inventario\\inventario.csproj",
+        "packagesPath": "C:\\Users\\Dann\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dann\\inventarioSena\\inventario\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dann\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

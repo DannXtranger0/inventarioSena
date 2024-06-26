@@ -184,7 +184,6 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="836,90,0,0" TextWrapping="Wrap" Text="informatica" VerticalAlignment="Top"/>
     </Grid>
 
 </Page>

@@ -51,11 +51,11 @@ namespace inventario
                 var contrasenia = contrasenia_show.Password;
                 if (string.IsNullOrEmpty(txtUsername.Text))
                 {
-                    MessageBox.Show("Este campo es obligatorio");
+                    MessageBox.Show("Por favor, rellene todos los campos");
                 }
                 else if (string.IsNullOrEmpty(contrasenia))
                 {
-                    MessageBox.Show("Este campo es obligatorio");
+                    MessageBox.Show("Por favor, rellene todos los campos");
                 }
                 else
                 {

@@ -46,6 +46,9 @@
     <Compile Update="Views\Editar_producto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Historial_prestamos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Inventario_admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,6 +97,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Editar_producto.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Historial_prestamos.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Inventario_admin.xaml">

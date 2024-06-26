@@ -37,7 +37,6 @@ namespace inventario
         {
             Login login = new Login();
             login.Show();
-            this.Close();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
