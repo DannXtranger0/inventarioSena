@@ -9,9 +9,9 @@ public partial class Prestamo
 
     public int? IdPersonaPrestamo { get; set; }
 
-    public byte[]? FechaHoraPrestamo { get; set; }
+    public DateTime FechaHoraPrestamo { get; set; }
 
-    public DateOnly? FechaLimite { get; set; }
+    public DateTime FechaLimite { get; set; }
 
     public int? IdElemento { get; set; }
 

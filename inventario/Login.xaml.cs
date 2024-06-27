@@ -1,5 +1,6 @@
 ﻿using inventario.Models;
 using inventario.Views;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,31 +48,61 @@ namespace inventario
         {
             using (SenaInventarioContext db = new SenaInventarioContext())
             {
-                var usuario = txtUsername.Text;
-                var contrasenia = contrasenia_show.Password;
-                if (string.IsNullOrEmpty(txtUsername.Text))
+                string usuario = txtUsername.Text;
+                string contrasenia = contrasenia_show.Visibility == Visibility.Visible ? contrasenia_show.Password : contrasenia_txt.Text;
+
+                if (string.IsNullOrEmpty(usuario) || string.IsNullOrEmpty(contrasenia))
                 {
-                    MessageBox.Show("Este campo es obligatorio");
+                    MessageBox.Show("Por favor, rellene todos los campos");
+                    return;
                 }
-                else if (string.IsNullOrEmpty(contrasenia))
+
+                try
                 {
-                    MessageBox.Show("Este campo es obligatorio");
-                }
-                else
-                {
-                    Usuario usua = db.Usuarios.FirstOrDefault(us => us.NombreUsuario == usuario);
-                    if ((contrasenia == usua.Contrasena))
+                    Usuario usua = db.Usuarios.Where(us => us.NombreUsuario == usuario && us.Contrasena == contrasenia).FirstOrDefault();
+
+                    if (usua != null)
                     {
-                        PantallaAdmin pantallaAdmin = new PantallaAdmin();
-                        pantallaAdmin.Show();
-                        this.Close();
+                        int id_usuario = usua.Id;
+
+                        // validar que tipo de usuario unicia sesion 
+                        Role rol = db.Roles.FirstOrDefault(r => r.Id == usua.IrRol);
+
+                        if (rol != null)
+                        {
+                            if (rol.NombreRol == "Administrador")
+                            {
+                                //redirigir al admini
+                                PantallaAdmin pantallaAdmin = new PantallaAdmin(id_usuario);
+                                pantallaAdmin.Show();
+                                this.Close();
+                            }
+                            else if (rol.NombreRol == "usuario")
+                            {
+                                //redirigir al portero
+                                Pantalla_portero pantalla_Portero = new Pantalla_portero(id_usuario);
+                                pantalla_Portero.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Tipo de usuario no válido", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Tipo de usuario no encontrado", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Credenciales incorrectos", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Credenciales incorrectas", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
-               
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error en el sistema: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }

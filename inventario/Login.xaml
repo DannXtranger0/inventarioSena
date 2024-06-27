@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:inventario"
         mc:Ignorable="d"
-        Title="Login" Height="679" Width="1200">
+        Title="Login" Height="522" Width="955"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Window.Resources>
         <!-- Estilo para las cajas de texto -->
         <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
@@ -48,14 +50,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="0,0,0,7" HorizontalAlignment="Center" Width="1200">
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="23*"/>
-            <ColumnDefinition Width="878*"/>
-        </Grid.ColumnDefinitions>
-
-
+    <Grid HorizontalAlignment="Center" Width="1200" Background="#FFDBDBDE" Height="656" VerticalAlignment="Top">
 
 
         <!-- Primer caja de texto con estilo personalizado -->
@@ -65,18 +60,18 @@
         <Image Source="src/vector.png" Grid.Column="1" Margin="507,23,507,453"></Image>-->
 
         <!-- Primer caja de texto con estilo personalizado -->
-        <TextBox x:Name="txtUsername" Style="{StaticResource CustomTextBoxStyle}" Margin="377,268,385,328" Grid.Column="1" Cursor="IBeam" />
+        <TextBox x:Name="txtUsername" Style="{StaticResource CustomTextBoxStyle}" VerticalContentAlignment="Center" Margin="384,126,378,470" Cursor="IBeam" FontSize="20" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" />
 
         <!-- Segunda caja de texto con estilo personalizado -->
-        <TextBox x:Name="contrasenia_txt" Style="{StaticResource CustomTextBoxStyle}" Margin="382,370,382,226" Grid.Column="1" Cursor="IBeam" />
-        <PasswordBox  Grid.Column="1" x:Name="contrasenia_show" HorizontalAlignment="Left" Margin="382,370,0,0" VerticalAlignment="Top" Width="407" Height="51" />
+        <TextBox x:Name="contrasenia_txt" Style="{StaticResource CustomTextBoxStyle}" VerticalContentAlignment="Center" Margin="385,229,379,367" Cursor="IBeam" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" />
+        <PasswordBox x:Name="contrasenia_show" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="385,229,0,0" VerticalAlignment="Top" Width="436" Height="60" Background="#FFF0F0F0" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Padding="3,0,0,0" />
 
         <!-- Botón con estilo personalizado -->
-        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesion" FontSize="20" Style="{StaticResource CustomButtonStyle}" Margin="442,512,456,79" Grid.Column="1" Click="btnIniciarSesion_Click_1" />
+        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesion" Cursor="Hand" FontSize="22" Style="{StaticResource CustomButtonStyle}" Margin="449,370,449,221" Click="btnIniciarSesion_Click_1" />
 
-        <Label Grid.Column="1" Content="Usuario" FontSize="25" HorizontalAlignment="Left" Margin="376,202,0,0" VerticalAlignment="Top" Width="100" />
-        <Label Grid.Column="1" Content="Contraseña" FontSize="25" HorizontalAlignment="Left" Margin="376,327,0,0" VerticalAlignment="Top" />
-        <CheckBox Grid.Column="1" Unchecked="ver_contraseña_Unchecked" Checked="ver_contraseña_Checked" x:Name="ver_contraseña" Content="Ver contraseña" HorizontalAlignment="Left" Margin="385,452,0,0" VerticalAlignment="Top" Height="17" Width="115" />
+        <Label Content="Usuario" FontSize="25" HorizontalAlignment="Left" Margin="383,60,0,0" VerticalAlignment="Top" Width="100" Height="43" />
+        <Label Content="Contraseña" FontSize="25" HorizontalAlignment="Left" Margin="383,185,0,0" VerticalAlignment="Top" Height="43" Width="135" />
+        <CheckBox Unchecked="ver_contraseña_Unchecked" Checked="ver_contraseña_Checked" x:Name="ver_contraseña" Content="Ver contraseña" HorizontalAlignment="Left" Margin="392,310,0,0" VerticalAlignment="Top" Height="17" Width="115" />
 
     </Grid>
 

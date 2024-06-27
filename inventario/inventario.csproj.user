@@ -46,10 +46,25 @@
     <Compile Update="Views\Editar_producto.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\Historial_prestamos.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Historial_prestamo_portero.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Inventario_admin.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\PantallaAdmin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pantalla_devolucion.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Pantalla_portero.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Registro_prestamo.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -96,10 +111,25 @@
     <Page Update="Views\Editar_producto.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Historial_prestamos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Historial_prestamo_portero.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Inventario_admin.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\PantallaAdmin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pantalla_devolucion.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Pantalla_portero.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Registro_prestamo.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -19,10 +19,14 @@ namespace inventario.Views
     /// </summary>
     public partial class PantallaAdmin : Window
     {
-        public PantallaAdmin()
+        private int userId;
+        public PantallaAdmin(int id_usuario)
         {
+            //obterner id del usuario que inicia sesion
+            this.userId = id_usuario;
             InitializeComponent();
-            frame_principal.Navigate(new Registro_personas());
+            
+            frame_principal.Navigate(new Historial_prestamos());
         }
 
         private void btn_inventario(object sender, RoutedEventArgs e)
@@ -31,8 +35,17 @@ namespace inventario.Views
             inventario_admin.Show();
         }
 
-        private void frame_principal_Navigated(object sender, System.Windows.Navigation.NavigationEventArgs e)
+       
+
+        private void btn_historial_Click(object sender, RoutedEventArgs e)
         {
+
+            frame_principal.Navigate(new Historial_prestamos());
+        }
+
+        private void btn_registro_pe_Click(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Registro_personas());
 
         }
     }

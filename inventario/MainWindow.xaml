@@ -294,7 +294,7 @@
                         <TextBlock FontSize="28" Foreground="White" VerticalAlignment="Center" Text="Informatica" />
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Foreground="{x:Null}"  Cursor="Hand" Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,8,0,8" Click="Button_Click" >
+                <Button Style="{DynamicResource ButtonStyle2}" Foreground="{x:Null}"  Cursor="Hand" Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,8,0,8" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image Source="/categoria_agricultura.png" Height="54" Margin="0,0,6,0" Width="56" RenderTransformOrigin="0.5,0.678" Cursor="Hand"/>
                         <TextBlock FontSize="28" Foreground="White" VerticalAlignment="Center" Text="Agricultura" Cursor="Hand" />
