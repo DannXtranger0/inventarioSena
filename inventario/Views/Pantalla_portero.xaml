@@ -178,16 +178,16 @@
     <Grid>
 
         <Rectangle HorizontalAlignment="Center" Height="122" VerticalAlignment="Top" Width="1200" Fill="#FF10CD00" Margin="0,-16,0,0"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,292" Width="842">
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FF10CD00" Name="btn_hidtorial" Click="btn_hidtorial_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,98,170" Width="180" Height="92" >
-                <StackPanel Orientation="Vertical" Height="136">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,287" Width="842">
+            <Button Style="{DynamicResource ButtonStyle1}" Background="#FF10CD00" Name="btn_hidtorial" Click="btn_hidtorial_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,98,170" Width="180" Height="123" >
+                <StackPanel Orientation="Vertical" Height="92">
                     <Image Source="/Views/carbon_product.png" MinWidth="58" MinHeight="58" MaxWidth="58" MaxHeight="58" Width="39"/>
                     <TextBlock Foreground="White" FontSize="20" Height="46">Prestar</TextBlock>
                 </StackPanel>
             </Button>
 
-            <Button Style="{DynamicResource ButtonStyle3}" Background="#FF10CD00" Name="btn_devolver" Click="btn_devolver_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="206" Height="92" Margin="350,0,0,170">
-                <StackPanel Orientation="Vertical" Height="137">
+            <Button Style="{DynamicResource ButtonStyle3}" Background="#FF10CD00" Name="btn_devolver" Click="btn_devolver_Click" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="206" Height="120" Margin="350,0,0,170">
+                <StackPanel Orientation="Vertical" Height="92">
                     <Image  MinWidth="58" MinHeight="58" MaxWidth="58" MaxHeight="58" Width="203" Source="/Views/receptor.png"/>
                     <TextBlock Foreground="White" TextAlignment="Center"
                                FontSize="20" Width="218" Height="54"><Run Text="Devolver"/></TextBlock>
@@ -195,6 +195,6 @@
             </Button>
 
         </StackPanel>
-        <Frame x:Name="frame_principal"  Margin="0,106,0,-138" />
+        <Frame x:Name="frame_principal" NavigationUIVisibility="Hidden" Margin="0,106,0,0" />
     </Grid>
 </Window>

@@ -25,19 +25,19 @@ namespace inventario
         public Registrar_usuario() 
         {
             InitializeComponent();
-             GetRoles();
+            GetRoles();
         }
         private void GetRoles()
         {
             using (SenaInventarioContext db = new SenaInventarioContext())
             {
                 var rolesUsuario = db.Roles.ToList();
-              
+
                 roles_usuario.ItemsSource = rolesUsuario;
                 roles_usuario.SelectedValuePath = "Id";
                 roles_usuario.DisplayMemberPath = "NombreRol";
 
-                
+
             }
         }
 
@@ -51,8 +51,8 @@ namespace inventario
                                           .Select(p => p.Id)
                                           .FirstOrDefault();
 
-                 //mensaje de error si el numero de documento no esta registrado
-                if (personaId==0)
+                //mensaje de error si el numero de documento no esta registrado
+                if (personaId == 0)
                 {
                     MessageBox.Show("El numero de documento no existe");
                 }
@@ -78,6 +78,6 @@ namespace inventario
         }
 
 
-       
+
     }
 }

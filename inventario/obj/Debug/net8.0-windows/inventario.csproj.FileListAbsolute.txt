@@ -640,3 +640,13 @@ C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\re
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\inventario.pdb
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\inventario.genruntimeconfig.cache
 C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\ref\inventario.dll
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Historial_prestamos.g.cs
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Historial_prestamo_portero.g.cs
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Pantalla_devolucion.g.cs
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Pantalla_portero.g.cs
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_prestamo.g.cs
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Historial_prestamos.baml
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Historial_prestamo_portero.baml
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Pantalla_devolucion.baml
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Pantalla_portero.baml
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_prestamo.baml

@@ -58,10 +58,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF56E34A"/>
         <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
         <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
@@ -69,8 +66,6 @@
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
         <Style x:Key="botonAgregarEstilo" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
             <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
             <Setter Property="BorderThickness" Value="1"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
@@ -88,7 +83,6 @@
                             </Trigger>
                             <Trigger Property="IsMouseOver" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
                             </Trigger>
                             <Trigger Property="IsPressed" Value="true">
                                 <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
@@ -186,6 +180,15 @@ Grid.Row="1" Grid.RowSpan="2">
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" Content="Agregar nuevo producto" HorizontalAlignment="Left" Margin="600,0,0,0" VerticalAlignment="Center" Width="231"  Height="50" Background="#FF10CD00" Foreground="White" FontSize="18" BorderBrush="{x:Null}"/>
+        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" HorizontalAlignment="Left" Margin="507,0,0,0" VerticalAlignment="Center" Width="246"  Height="47" Background="#FF10CD00" Foreground="White" FontSize="16"  BorderBrush="{x:Null}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="/Views/icono_agregrar.png" Grid.Column="0" HorizontalAlignment="Left" Margin="-5,0,0,0" Width="27" VerticalAlignment="Center" Height="27" />
+                <TextBlock Text="Agregar nuevo producto" Grid.ColumnSpan="2" Margin="32,0,-8,0" VerticalAlignment="Center"/>
+            </Grid>
+        </Button>
     </Grid>
 </Page>

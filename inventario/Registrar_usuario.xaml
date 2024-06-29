@@ -5,100 +5,204 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:inventario"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="478" d:DesignWidth="1200"
       Title="Registrar_usuario">
-    <Grid Background="White" Margin="10">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <Page.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF36C536"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF36C536"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="Estilo_boton" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" CornerRadius="5" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="Estilo_textBox" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
 
-        <Label Content="Asignar cuenta de usuario"
-               HorizontalAlignment="Left" 
-               Margin="6,10,0,0" 
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Canvas Background="White">
+        <Image Source="/icono_registrar_usuario.png" Canvas.Left="535" Canvas.Top="89" HorizontalAlignment="Left" VerticalAlignment="Center" Height="130" Width="130" />
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Numero de Documento" FontSize="18" Canvas.Left="142" Canvas.Top="207" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Rol" FontSize="18" Canvas.Left="147" Canvas.Top="308" VerticalAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Nombre de Usuario"  FontSize="18" Canvas.Left="747" Canvas.Top="204" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Contraseña"  FontSize="18" Canvas.Left="745" Canvas.Top="308" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Registro de Usuario"  FontSize="22" Canvas.Left="498" Canvas.Top="28" FontWeight="Bold" VerticalAlignment="Center"/>
+
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Height="47" Width="292" Canvas.Left="142" Canvas.Top="236" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox  Name="documento_txt" Style="{DynamicResource Estilo_textBox}" Canvas.Left="146" TextWrapping="Wrap"  Canvas.Top="244" Width="282" Height="30" FontSize="20" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Height="48" Width="292" Canvas.Left="745" Canvas.Top="236" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox  Name="txt_usuario" Style="{DynamicResource Estilo_textBox}" Canvas.Left="749" TextWrapping="Wrap"  Canvas.Top="244" Width="282" Height="30" FontSize="20" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Height="47" Width="292" Canvas.Left="744" Canvas.Top="337" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Name="contraseña_txt" Style="{DynamicResource Estilo_textBox}" Canvas.Left="748" TextWrapping="Wrap"  Canvas.Top="345" Width="282" Height="30" FontSize="20" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+
+        <Button Style="{DynamicResource Estilo_boton}" Content="Crear usuario"
+        HorizontalAlignment="Center" 
+        VerticalAlignment="Top" 
+        Width="200" 
+        Foreground="White"
+        Name="btn_registro" 
+        Background="Green"
+        BorderBrush="White"
+        BorderThickness="1"
+        Padding="5"
+        FontSize="14"
+        FontWeight="Bold" Height="39" Canvas.Left="500" Canvas.Top="399"/>
+        <ComboBox Name="roles_usuario" Canvas.Left="147" Canvas.Top="336" Width="292" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+    </Canvas>
+
+
+
+    <!--<Label Content="Asignar cuenta de usuario"
+               HorizontalAlignment="Center" 
+               Margin="0,15,0,0" 
                VerticalAlignment="Top" 
                FontSize="16" 
-               FontWeight="Bold" Grid.Column="1"/>
+               FontWeight="Bold" Height="31" Width="208"/>
+        <Image Source="/icono_registrar_usuario.png" Margin="0,48,0,270" HorizontalAlignment="Center" Width="105" />
 
         <Label Content="Número de Documento" 
-               Grid.Row="1" 
-               HorizontalAlignment="Right" 
-               Margin="10" 
-               VerticalAlignment="Center"/>
-        <TextBox Grid.Row="1" 
-                 Grid.Column="1" 
-                 HorizontalAlignment="Left" 
-                 Margin="10" 
-                 VerticalAlignment="Center" 
-                 Width="200" 
-                 Name="documento_txt"
-                 BorderBrush="Gray"
-                 BorderThickness="1"
-                 Padding="5"/>
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" Height="30" Width="205" Margin="84,215,0,0" FontSize="18"/>
+
+        <Border BorderBrush="#10CD00" BorderThickness="2" CornerRadius="6" Margin="298,204,618,221" Grid.ColumnSpan="1">
+            <TextBox 
+                     VerticalAlignment="Center" 
+                     Name="documento_txt"
+                     BorderBrush="Transparent"
+                     BorderThickness="0" 
+                     Padding="5" Background="{x:Null}" Margin="0,0,3,0" Height="53" HorizontalAlignment="Center" Width="274"/>
+        </Border>
 
         <Label Content="Rol" 
-               Grid.Row="2" 
-               HorizontalAlignment="Right" 
-               Margin="10" 
-               VerticalAlignment="Center"/>
-        <ComboBox Grid.Row="2" 
-                  
-                  Grid.Column="1" 
-                  HorizontalAlignment="Left" 
-                  Margin="10" 
-                  VerticalAlignment="Center" 
-                  Width="200" 
+               HorizontalAlignment="Left" 
+               Margin="243,309,0,0" 
+               VerticalAlignment="Top" Height="30" Width="39" FontSize="18"/>
+        <ComboBox 
+                  HorizontalAlignment="Right" 
+                  Margin="0,296,618,0" 
+                  VerticalAlignment="Top" 
+                  Width="284" 
                   Name="roles_usuario"
                   BorderBrush="Gray"
                   BorderThickness="1"
-                  Padding="5" />
+                  Padding="5" Height="53" />
 
         <Label Content="Nombre de usuario" 
-               Grid.Row="3" 
-               HorizontalAlignment="Right" 
-               Margin="10" 
-               VerticalAlignment="Center"/>
-        <TextBox Grid.Row="3" 
-                 Grid.Column="1" 
-                 HorizontalAlignment="Left" 
-                 Margin="10" 
-                 VerticalAlignment="Center" 
-                 Width="200" 
+               HorizontalAlignment="Left" 
+               Margin="634,217,0,0" 
+               VerticalAlignment="Top" Height="30" Width="170" FontSize="18"/>
+        <Border BorderBrush="#10CD00" BorderThickness="2" CornerRadius="6" Margin="822,204,0,221" HorizontalAlignment="Left" Width="307"/>
+        <TextBox 
+                 Margin="827,204,80,221" 
                  Name="txt_usuario"
-                 BorderBrush="Gray"
+                 BorderBrush="{x:Null}"
                  BorderThickness="1"
-                 Padding="5" />
+                 Padding="5" Background="{x:Null}" SelectionBrush="{x:Null}" />
 
         <Label Content="Contraseña" 
-               Grid.Row="4" 
-               HorizontalAlignment="Right" 
-               Margin="10" 
-               VerticalAlignment="Center"/>
-        <TextBox Grid.Row="4" 
-                 Grid.Column="1" 
+               HorizontalAlignment="Left" 
+               Margin="700,302,0,0" 
+               VerticalAlignment="Top" Height="30" Width="104" FontSize="18"/>
+        <TextBox 
                  HorizontalAlignment="Left" 
-                 Margin="10" 
-                 VerticalAlignment="Center" 
-                 Width="200" 
+                 Margin="827,296,0,0" 
+                 VerticalAlignment="Top" 
+                 Width="293" 
                  Name="contraseña_txt"
-                 BorderBrush="Gray"
+                 BorderBrush="{x:Null}"
                  BorderThickness="1"
-                 Padding="5" 
+                 Padding="5" Height="45" Background="{x:Null}" SelectionBrush="{x:Null}" 
                  />
 
-        <Button Content="Crear usuario" 
-                Grid.Row="5"
+        <Button Content="Crear usuario"
                 HorizontalAlignment="Left" 
-                Margin="12,20,0,0" 
+                Margin="502,405,0,0" 
                 VerticalAlignment="Top" 
                 Width="200" 
                 Foreground="White"
@@ -109,6 +213,10 @@
                 BorderThickness="1"
                 Padding="5"
                 FontSize="14"
-                FontWeight="Bold" Grid.Column="1" Grid.RowSpan="2"/>
-    </Grid>
+                FontWeight="Bold" Height="31"/>
+        <Border BorderBrush="#10CD00" BorderThickness="2" CornerRadius="6" Margin="822,290,0,131" Height="57" HorizontalAlignment="Left" Width="307"/>-->
+
+
+
+
 </Page>

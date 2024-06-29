@@ -105,6 +105,8 @@ namespace inventario
                 }
             }
         }
+
+  
     }
 }
 

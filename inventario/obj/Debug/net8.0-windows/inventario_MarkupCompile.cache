@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\
+C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\
 inventario
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
-C:\Users\user\source\repos\inventarioSena\inventario\App.xaml
+C:\Users\Dann\inventarioSena\inventario\App.xaml
 21-1743912295
 
 35-281186262
-238-1775847827
+238-1565571680
 Login.xaml;MainWindow.xaml;Registrar_usuario.xaml;Registro_personas.xaml;Views\Agregar_producto.xaml;Views\Categoria_agricultura.xaml;Views\Categoria_agricultura_admin.xaml;Views\Categoria_herramientas.xaml;Views\Categoria_herramientas_admin.xaml;Views\Categoria_informatica.xaml;Views\Categoria_informatica_admin.xaml;Views\Categoria_todos.xaml;Views\Categoria_todos_admin.xaml;Views\Editar_producto.xaml;Views\Historial_prestamos.xaml;Views\Historial_prestamo_portero.xaml;Views\Inventario_admin.xaml;Views\PantallaAdmin.xaml;Views\Pantalla_devolucion.xaml;Views\Pantalla_portero.xaml;Views\Registro_prestamo.xaml;
 
 False

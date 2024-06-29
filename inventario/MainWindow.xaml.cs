@@ -23,6 +23,9 @@ namespace inventario
             InitializeComponent();
         
             frame_principal.Navigate(new Categoria_todos());
+            
+            Pantalla_portero ventana = new Pantalla_portero(3);
+            ventana.Show();
         }
 
 

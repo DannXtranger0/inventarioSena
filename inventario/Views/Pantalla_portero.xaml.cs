@@ -28,7 +28,7 @@ namespace inventario.Views
              
 
             InitializeComponent();
-            frame_principal.Navigate(new Historial_prestamo_portero());
+            frame_principal.Navigate(new Registro_prestamo(1));
         }
 
         private void btn_hidtorial_Click(object sender, RoutedEventArgs e)
@@ -38,6 +38,7 @@ namespace inventario.Views
 
         private void btn_devolver_Click(object sender, RoutedEventArgs e)
         {
+            frame_principal.Navigate(new Historial_prestamo_portero());
 
         }
     }

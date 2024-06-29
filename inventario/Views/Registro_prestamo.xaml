@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:inventario.Views"
       mc:Ignorable="d"
-      Title="Registro_prestamo" Height="667"  Width="1187">
+      Title="Registro_prestamo" Height="478"  Width="1200">
 
     <Page.Resources>
         <!-- Estilo para las cajas de texto -->
@@ -72,60 +72,108 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
-        <Style x:Key="boton3" TargetType="Button">
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="Background" Value="#1e1e1e"/>
-            <Setter Property="BorderBrush" Value="#131313"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="10 5"/>
-            <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="14"/>
-            <Setter Property="Template">
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}"
-            BorderBrush="{TemplateBinding BorderBrush}"
-            BorderThickness="{TemplateBinding BorderThickness}"
-            CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Style.Triggers>
-                <!-- Cambio de color de fondo cuando se presiona el botón -->
-                <Trigger Property="IsPressed" Value="True">
-                    <Setter Property="Background" Value="#FF39923E"/>
-                </Trigger>
-            </Style.Triggers>
         </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="estilobotonsitonnegro" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="6" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+      
+        <ControlTemplate x:Key="EstiloTextBox" TargetType="{x:Type TextBoxBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                </Trigger>
+               
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        
+          
     </Page.Resources>
 
-    <Grid RenderTransformOrigin="0.511,0.555" Background="White"  Margin="60,23,47,197">
+    <Grid RenderTransformOrigin="0.511,0.555" Background="White"  Margin="0,23,0,10">
         <Canvas Margin="10,121,1159,528" RenderTransformOrigin="-1.433,0.612">
             <!-- Utiliza un Ellipse para dibujar el punto negro -->
         </Canvas>
-        <Label Content="Datos del Usuario que recibio el Producto" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="24" Canvas.Top="-43" Margin="90,24,0,0" />
+        <Label Content="Datos de la persona que recibe el elemento" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="24" Canvas.Top="-43" Margin="127,14,0,0" FontWeight="Bold" />
         <Canvas Margin="15,90,1149,557" RenderTransformOrigin="-1.433,0.612">
             <!-- Utiliza un Ellipse para dibujar el punto negro -->
         </Canvas>
-        <Label Content="Información del Producto Prestado" FontSize="20" HorizontalAlignment="Left" Margin="674,27,0,0" VerticalAlignment="Top" Height="36" RenderTransformOrigin="0.5,0.5">
+        <Label Content="Información del Producto Prestado" FontSize="20" HorizontalAlignment="Left" Margin="762,15,0,0" VerticalAlignment="Top" Height="36" RenderTransformOrigin="0.5,0.5" FontWeight="Bold">
 
         </Label>
-        <Label Content="Número De Documento" FontSize="20" HorizontalAlignment="Left" Margin="100,63,0,0" VerticalAlignment="Top" Width="229"/>
-        <TextBox HorizontalAlignment="Left"  Name="documento_persona" Margin="105,100,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="274" Height="35" Style="{StaticResource conbocaja}" SelectionOpacity="10"/>
-        <Label Content="Código Serial" FontSize="20" HorizontalAlignment="Left" Margin="699,65,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left"  Name="codigo_serial_txt" Margin="703,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="242" Height="35"  Style="{StaticResource conbocaja}"/>
-        <Label Content="Fecha de Prestamo" FontSize="20" HorizontalAlignment="Left" Margin="101,152,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="fecha_pres" HorizontalAlignment="Left" Margin="105,186,0,0" VerticalAlignment="Top" Width="274" Height="38" Background="#FFEFEFEF"/>
-        <Label Content="Estado del Elemento" FontSize="20" HorizontalAlignment="Left" Margin="701,152,0,0" VerticalAlignment="Top"/>
-        <Label Content="Fecha Devolución" FontSize="20" HorizontalAlignment="Left" Margin="101,251,0,0" VerticalAlignment="Top"/>
-        <DatePicker Name="fecha_devolucion" HorizontalAlignment="Left" Margin="105,288,0,0" VerticalAlignment="Top" Width="274" Height="36" Background="#FFEDECEC"/>
-        <Label Content="Documento Funcionario" FontSize="20" HorizontalAlignment="Left" Margin="703,246,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Name="documento_fun" Margin="703,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="242" Height="35"  Style="{StaticResource conbocaja}"/>
-        <Button Content="Validar" Name="validar_btn"  FontSize="20" HorizontalAlignment="Left" Margin="353,368,0,0" VerticalAlignment="Top" Width="141" Height="32"  Style="{StaticResource boton2}"  Click="validar_btn_Click"/>
-        <Button Content="Cancelar" FontSize="20" Margin="622,368,317,0" VerticalAlignment="Top" Height="32"  Style="{StaticResource boton3}" />
-        <ComboBox HorizontalAlignment="Left" Name="estado_prestamo" Margin="703,192,0,0" VerticalAlignment="Top" Width="242" Height="42" SelectionChanged="estado_prestamo_SelectionChanged"/>
+
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Margin="125,90,791,312"/>
+        <Label Content="Número De Documento" FontSize="18" HorizontalAlignment="Left" Margin="125,61,0,0" VerticalAlignment="Top" Width="229"/>
+        <TextBox Template="{DynamicResource EstiloTextBox}" HorizontalAlignment="Left"  Name="documento_persona" Margin="130,94,0,0" TextWrapping="Wrap" Text=""  VerticalAlignment="Top" Width="274" Height="35" Style="{StaticResource conbocaja}" SelectionOpacity="10" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="18"/>
+        <Label Content="Código Serial" FontSize="18" HorizontalAlignment="Left" Margin="789,60,0,0" VerticalAlignment="Top"/>
+        <TextBox  Template="{DynamicResource EstiloTextBox}" HorizontalAlignment="Left"  Name="codigo_serial_txt" Margin="789,94,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="274" Height="35"  Style="{StaticResource conbocaja}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Background="{x:Null}" BorderBrush="{x:Null}" FontSize="18"/>
+        <Label Content="Fecha de Prestamo" FontSize="18" HorizontalAlignment="Left" Margin="126,146,0,0" VerticalAlignment="Top"/>
+        <TextBox  Template="{DynamicResource EstiloTextBox}" Name="fecha_pres" HorizontalAlignment="Left" Margin="130,180,0,0" VerticalAlignment="Top" Width="274" Height="35" Background="{x:Null}" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="18"/>
+        <Label Content="Estado del Elemento" FontSize="18" HorizontalAlignment="Left" Margin="789,146,0,0" VerticalAlignment="Top"/>
+        <Label Content="Fecha Devolución" FontSize="18" HorizontalAlignment="Left" Margin="126,233,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name="fecha_devolucion" HorizontalAlignment="Left" Margin="128,267,0,0" VerticalAlignment="Top" Width="274" Height="35" Background="#FFEDECEC"/>
+        <Label Content="Documento Funcionario" FontSize="18" HorizontalAlignment="Left" Margin="791,233,0,0" VerticalAlignment="Top"/>
+        <TextBox  Template="{DynamicResource EstiloTextBox}" HorizontalAlignment="Left" Name="documento_fun" Margin="791,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="35"  Style="{StaticResource conbocaja}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="18"/>
+        <Button Content="Validar" Name="validar_btn"  FontSize="20" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" Width="164" Height="43"  Style="{StaticResource boton2}"  Click="validar_btn_Click"/>
+        <Button Style="{DynamicResource estilobotonsitonnegro}" Content="Resgistrar Persona" FontSize="12" Margin="154,367,906,0" VerticalAlignment="Top" Height="33"   Background="{x:Null}" Foreground="Black" BorderThickness="1.6" BorderBrush="#FF262626"/>
+        <ComboBox HorizontalAlignment="Left"  Name="estado_prestamo" Margin="789,180,0,0" VerticalAlignment="Top" Width="274" Height="35" SelectionChanged="estado_prestamo_SelectionChanged" FontSize="18"/>
+        <TextBlock   HorizontalAlignment="Left"  Margin="127,334,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="La persona no está registrada?" VerticalAlignment="Top" Width="195"/>
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Margin="125,176,791,226"/>
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Margin="784,90,132,312"/>
+        <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Margin="786,263,130,139"/>
 
     </Grid>
 </Page>

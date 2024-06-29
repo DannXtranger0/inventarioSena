@@ -13,11 +13,18 @@
     <None Remove="categoria_herramientas.png" />
     <None Remove="categoria_informatica.png" />
     <None Remove="categoria_todos.png" />
+    <None Remove="icono_contrasena.png" />
+    <None Remove="icono_iniciar_sesion.png" />
+    <None Remove="icono_registrar_usuario.png" />
     <None Remove="login.png" />
+    <None Remove="logoSena.png" />
+    <None Remove="Views\carbon_product.png" />
     <None Remove="Views\categoria_todos.png" />
     <None Remove="Views\historial_prestamos.png" />
+    <None Remove="Views\icono_agregrar.png" />
     <None Remove="Views\icono_lupa.png" />
     <None Remove="Views\portero.png" />
+    <None Remove="Views\receptor.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,11 +45,18 @@
     <Resource Include="categoria_herramientas.png" />
     <Resource Include="categoria_informatica.png" />
     <Resource Include="categoria_todos.png" />
+    <Resource Include="icono_contrasena.png" />
+    <Resource Include="icono_iniciar_sesion.png" />
+    <Resource Include="icono_registrar_usuario.png" />
     <Resource Include="login.png" />
+    <Resource Include="logoSena.png" />
+    <Resource Include="Views\carbon_product.png" />
     <Resource Include="Views\categoria_todos.png" />
     <Resource Include="Views\historial_prestamos.png" />
+    <Resource Include="Views\icono_agregrar.png" />
     <Resource Include="Views\icono_lupa.png" />
     <Resource Include="Views\portero.png" />
+    <Resource Include="Views\receptor.png" />
   </ItemGroup>
 
 </Project>

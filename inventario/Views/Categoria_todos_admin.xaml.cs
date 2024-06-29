@@ -81,10 +81,7 @@ namespace inventario.Views
 
      
 
-        private void txtbuscado_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-            buscarDatos();
-        }
+    
 
         private void btneliminar_Click_1(object sender, RoutedEventArgs e)
         {

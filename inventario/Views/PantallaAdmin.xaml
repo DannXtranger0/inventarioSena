@@ -178,20 +178,20 @@
     <Grid>
 
         <Rectangle HorizontalAlignment="Center" Height="122" VerticalAlignment="Top" Width="1200" Fill="#FF10CD00" Margin="0,-16,0,0"/>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,292" Width="842">
-            <Button Style="{DynamicResource ButtonStyle1}" Background="#FF10CD00" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,98,170" Width="180" Height="92" Click="btn_inventario">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,292" Width="1094">
+            <Button Style="{DynamicResource ButtonStyle1}" Background="#FF10CD00" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,200,170" Width="180" Height="92" Click="btn_inventario">
                 <StackPanel Orientation="Vertical" Height="136">
                     <Image Source="/Views/categoria_todos.png" MinWidth="58" MinHeight="58" MaxWidth="58" MaxHeight="58"/>
                     <TextBlock Foreground="White" FontSize="20" Height="46">Inventario</TextBlock>
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource ButtonStyle2}" Name="btn_registro_pe" Click="btn_registro_pe_Click" Background="#FF10CD00" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="0,0,100,170" Height="92">
+            <Button Style="{DynamicResource ButtonStyle2}" Name="btn_registro_pe" Click="btn_registro_pe_Click" Background="#FF10CD00" Foreground="{x:Null}" BorderBrush="{x:Null}" Margin="60,0,100,170" Height="92">
                 <StackPanel Orientation="Vertical" Height="136">
                     <Image Source="/Views/portero.png" MinWidth="58" MinHeight="58"/>
                     <TextBlock Foreground="White" FontSize="20" Height="52"><Run Text="Registro de Usuarios"/></TextBlock>
                 </StackPanel>
             </Button>
-            <Button Style="{DynamicResource ButtonStyle3}" Name="btn_historial" Click="btn_historial_Click" Background="#FF10CD00" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="206" Height="92" Margin="0,0,0,170">
+            <Button Style="{DynamicResource ButtonStyle3}" Name="btn_historial" Click="btn_historial_Click" Background="#FF10CD00" Foreground="{x:Null}" BorderBrush="{x:Null}" Width="206" Height="92" Margin="100,0,0,170">
                 <StackPanel Orientation="Vertical" Height="137">
                     <Image Source="/Views/historial_prestamos.png" MinWidth="58" MinHeight="58" MaxWidth="58" MaxHeight="58" Width="203"/>
                     <TextBlock Foreground="White" FontSize="20" Width="218" Height="54"><Run Text="Historial de Prestamos"/></TextBlock>
@@ -199,6 +199,6 @@
             </Button>
 
         </StackPanel>
-        <Frame x:Name="frame_principal"  Margin="0,106,0,0" />
+        <Frame x:Name="frame_principal" NavigationUIVisibility="Hidden" Margin="0,106,0,0" />
     </Grid>
 </Window>

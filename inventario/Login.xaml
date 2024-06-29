@@ -9,16 +9,6 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
     <Window.Resources>
-        <!-- Estilo para las cajas de texto -->
-        <Style x:Key="CustomTextBoxStyle" TargetType="TextBox">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Background" Value="#F0F0F0"/>
-            <Setter Property="BorderBrush" Value="#CCCCCC"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="5"/>
-            <Setter Property="FontFamily" Value="Arial"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style>
 
         <!-- Estilo para el botón -->
         <Style x:Key="CustomButtonStyle" TargetType="Button">
@@ -35,7 +25,7 @@
                         <Border Background="{TemplateBinding Background}"
                              BorderBrush="{TemplateBinding BorderBrush}"
                              BorderThickness="{TemplateBinding BorderThickness}"
-                             CornerRadius="5">
+                             CornerRadius="7">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                     </ControlTemplate>
@@ -48,9 +38,71 @@
                 </Trigger>
             </Style.Triggers>
         </Style>
+        <!-- Estilo para las cajas de texto -->
+
+        <ControlTemplate x:Key="EstiloTextbox" TargetType="{x:Type TextBoxBase}">
+            <Border x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True">
+                <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="false">
+                    <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                </Trigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <SolidColorBrush x:Key="TextBox.Static.Border1" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border1" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border1" Color="#FF569DE5"/>
+
+
+        <Style x:Key="ESTILOPASSWORD" TargetType="{x:Type PasswordBox}">
+            <Setter Property="PasswordChar" Value="●"/>
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border1}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+
+
     </Window.Resources>
 
-    <Grid HorizontalAlignment="Center" Width="1200" Background="#FFDBDBDE" Height="656" VerticalAlignment="Top">
+    <Grid HorizontalAlignment="Center" Width="954" Background="#FFDBDBDE" Height="506" VerticalAlignment="Center">
 
 
         <!-- Primer caja de texto con estilo personalizado -->
@@ -59,19 +111,45 @@
         <Image Source="src/contraseña.png" Grid.Column="1" Margin="326,372,804,247"></Image>
         <Image Source="src/vector.png" Grid.Column="1" Margin="507,23,507,453"></Image>-->
 
+        <Image Source="/logoSena.png" Margin="327,20,368,353"/>
+
         <!-- Primer caja de texto con estilo personalizado -->
-        <TextBox x:Name="txtUsername" Style="{StaticResource CustomTextBoxStyle}" VerticalContentAlignment="Center" Margin="384,126,378,470" Cursor="IBeam" FontSize="20" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" />
+        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="6" Margin="250,224,248,236">
+
+        </Border>
+        <TextBox Template="{DynamicResource EstiloTextbox}" x:Name="txtUsername"  VerticalContentAlignment="Center" Margin="260,219,257,233" Cursor="IBeam" FontSize="18" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Height="60" Width="436.2" Grid.RowSpan="1" Padding="30,0,0,0">
+            <TextBox.Background>
+                <ImageBrush ImageSource="/icono_iniciar_sesion.png" Stretch="None"
+                                AlignmentX="Left">
+                </ImageBrush>
+            </TextBox.Background>
+        </TextBox>
 
         <!-- Segunda caja de texto con estilo personalizado -->
-        <TextBox x:Name="contrasenia_txt" Style="{StaticResource CustomTextBoxStyle}" VerticalContentAlignment="Center" Margin="385,229,379,367" Cursor="IBeam" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" />
-        <PasswordBox x:Name="contrasenia_show" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="385,229,0,0" VerticalAlignment="Top" Width="436" Height="60" Background="#FFF0F0F0" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Padding="3,0,0,0" />
+
+        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="6" Margin="252,334,246,126">
+
+        </Border>
+        <TextBox x:Name="contrasenia_txt" Template="{DynamicResource EstiloTextbox}" VerticalContentAlignment="Center" Margin="262,328,256,124" Cursor="IBeam" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Width="436" Height="60" Padding="30,0,0,0" BorderBrush="{x:Null}" FontSize="18" >
+            <TextBox.Background>
+                <ImageBrush Stretch="None"
+                    AlignmentX="Left" ImageSource="/icono_contrasena.png"/>
+            </TextBox.Background>
+        </TextBox>
+
+        <PasswordBox Style="{DynamicResource ESTILOPASSWORD}" x:Name="contrasenia_show" HorizontalAlignment="Left"  VerticalContentAlignment="Center" Margin="263,328,0,0" VerticalAlignment="Top" Width="436" Height="60" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Padding="30,0,0,0" SelectionTextBrush="{x:Null}" FontSize="18">
+            <PasswordBox.Background>
+                <ImageBrush Stretch="None"
+         AlignmentX="Left" ImageSource="/icono_contrasena.png" TileMode="None" ViewboxUnits="RelativeToBoundingBox" ViewportUnits="RelativeToBoundingBox" />
+            </PasswordBox.Background>
+        </PasswordBox>
 
         <!-- Botón con estilo personalizado -->
-        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesion" Cursor="Hand" FontSize="22" Style="{StaticResource CustomButtonStyle}" Margin="449,370,449,221" Click="btnIniciarSesion_Click_1" />
+        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesion" Cursor="Hand" FontSize="22" Style="{StaticResource CustomButtonStyle}" Margin="370,423,410,36" Click="btnIniciarSesion_Click_1" />
 
-        <Label Content="Usuario" FontSize="25" HorizontalAlignment="Left" Margin="383,60,0,0" VerticalAlignment="Top" Width="100" Height="43" />
-        <Label Content="Contraseña" FontSize="25" HorizontalAlignment="Left" Margin="383,185,0,0" VerticalAlignment="Top" Height="43" Width="135" />
-        <CheckBox Unchecked="ver_contraseña_Unchecked" Checked="ver_contraseña_Checked" x:Name="ver_contraseña" Content="Ver contraseña" HorizontalAlignment="Left" Margin="392,310,0,0" VerticalAlignment="Top" Height="17" Width="115" />
+        <Label Content="Usuario" FontSize="25" HorizontalAlignment="Left" Margin="248,171,0,0" VerticalAlignment="Top" Width="100" Height="43" />
+        <Label Content="Contraseña" FontSize="25" HorizontalAlignment="Left" Margin="248,282,0,0" VerticalAlignment="Top" Height="43" Width="135" />
+        <CheckBox Unchecked="ver_contraseña_Unchecked" Checked="ver_contraseña_Checked" x:Name="ver_contraseña" Content="Ver contraseña" HorizontalAlignment="Left" Margin="729,349,0,0" VerticalAlignment="Top" Height="17" Width="115" />
 
     </Grid>
 
