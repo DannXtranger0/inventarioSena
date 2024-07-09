@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\Dann\inventarioSena\inventario\App.xaml
-21-1743912295
+221470910919
 
-37-1158195674
+38-1260049492
 238-1565571680
-Login.xaml;MainWindow.xaml;Registrar_usuario.xaml;Registro_personas.xaml;Views\Agregar_producto.xaml;Views\Categoria_agricultura.xaml;Views\Categoria_agricultura_admin.xaml;Views\Categoria_herramientas.xaml;Views\Categoria_herramientas_admin.xaml;Views\Categoria_informatica.xaml;Views\Categoria_informatica_admin.xaml;Views\Categoria_todos.xaml;Views\Categoria_todos_admin.xaml;Views\Editar_producto.xaml;Views\Historial_prestamos.xaml;Views\Historial_prestamo_portero.xaml;Views\Inventario_admin.xaml;Views\PantallaAdmin.xaml;Views\Pantalla_devolucion.xaml;Views\Pantalla_portero.xaml;Views\Registro_prestamo.xaml;
+Login.xaml;MainWindow.xaml;Registrar_usuario.xaml;Registro_personas.xaml;Views\Agregar_producto.xaml;Views\Categoria_agricultura.xaml;Views\Categoria_agricultura_admin.xaml;Views\Categoria_herramientas.xaml;Views\Categoria_herramientas_admin.xaml;Views\Categoria_informatica.xaml;Views\Categoria_informatica_admin.xaml;Views\Categoria_todos.xaml;Views\Categoria_todos_admin.xaml;Views\Editar_producto.xaml;Views\Historial_prestamos.xaml;Views\Historial_prestamo_portero.xaml;Views\Inventario_admin.xaml;Views\PantallaAdmin.xaml;Views\Pantalla_devolucion.xaml;Views\Pantalla_portero.xaml;Views\Registro_personas_portero.xaml;Views\Registro_prestamo.xaml;
 
-False
+True
 

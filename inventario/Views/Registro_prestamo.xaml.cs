@@ -127,5 +127,12 @@ namespace inventario.Views
         {
 
         }
+
+        private void btn_registro_persona(object sender, RoutedEventArgs e)
+        {
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            navService?.Navigate(new Registro_personas_portero());
+
+        }
     }
 }
