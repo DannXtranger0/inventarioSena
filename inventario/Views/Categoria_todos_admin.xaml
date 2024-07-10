@@ -168,10 +168,10 @@
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button x:Name="btneliminar"   CommandParameter="{Binding id}" Click="btneliminar_Click_1" Margin="5">
-                                    <Image Width="16" Source="C:\Users\user\source\repos\inventarioSena\inventario\Views\eliminar.png" Margin="0,0,5,0"></Image>
+                                    <Image Width="16" Source="/Views/eliminar.png" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
                                 </Button>
-                                <Button  Name="btneditar" Margin="5" CommandParameter="{Binding id}" Click="btneditar_Click">
-                                    <Image Width="16" Source="C:\Users\user\source\repos\inventarioSena\inventario\Views\editar.png" Margin="0,0,5,0"></Image>
+                                <Button  Name="btneditar" Margin="5" CommandParameter="{Binding id}" Click="btneditar_Click" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                    <Image Width="16" Source="/Views/editar.png" Margin="0,0,5,0"></Image>
                                 </Button>
                             </StackPanel>
                         </DataTemplate>

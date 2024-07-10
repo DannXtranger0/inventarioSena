@@ -77,7 +77,7 @@ namespace inventario
                                 pantallaAdmin.Show();
                                 this.Close();
                             }
-                            else if (rol.NombreRol == "usuario")
+                            else if (rol.NombreRol == "portero")
                             {
                                 //redirigir al portero
                                 Pantalla_portero pantalla_Portero = new Pantalla_portero(id_usuario);

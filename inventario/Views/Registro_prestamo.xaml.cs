@@ -36,10 +36,10 @@ namespace inventario.Views
         {
             using (SenaInventarioContext db = new SenaInventarioContext())
             {
-                var prestamos_estado = db.EstadoPrestamos.ToList();
+                var prestamos_estado = db.EstadoElementos.ToList();
                 estado_prestamo.ItemsSource = prestamos_estado;
                 estado_prestamo.SelectedValuePath = "Id";
-                estado_prestamo.DisplayMemberPath = "NombreEstadoPrestamo";
+                estado_prestamo.DisplayMemberPath = "NombreEstadoElemento";
 
             }
         }
@@ -99,7 +99,6 @@ namespace inventario.Views
                     }
 
                     nuevo_prestamo.IdPersonaPrestamo = personaId;
-                    nuevo_prestamo.FechaHoraPrestamo = DateTime.ParseExact(fecha_pres.Text, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
                     nuevo_prestamo.FechaLimite = (DateTime)fecha_devolucion.SelectedDate;
                     nuevo_prestamo.IdElemento = elementoId;
                     nuevo_prestamo.IdFuncionarioAutorizacion = funcionarioAutorizacionId;

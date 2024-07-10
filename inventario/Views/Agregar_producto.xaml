@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:inventario.Views"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+ d:DesignHeight="450" d:DesignWidth="945"     
       Title="Agregar_producto">
 
     <Page.Resources>
@@ -162,51 +162,33 @@
         </Style>
     </Page.Resources>
 
-    <Grid Margin="159,20,33,41">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
-            <RowDefinition/>
+    <Canvas>
+        <Border BorderThickness="2" CornerRadius="9" BorderBrush="#FF1AFF07" Height="50" Width="260" Canvas.Left="225" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Canvas.Left="528" Width="88" Canvas.Top="104">Codigo:
+        </TextBlock>
+        <ComboBox Name="persona_encargada" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="248" Grid.Column="1" SelectionChanged="persona_encargada_SelectionChanged" Background="Black" Height="35" FontSize="18" Canvas.Left="235" Canvas.Top="189"/>
+
+        <TextBox Style="{DynamicResource TextBoxEstilo}" x:Name="codigo_txt"  TextWrapping="Wrap"   Width="248" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Grid.Row="1" HorizontalContentAlignment="Center" Canvas.Left="614" Canvas.Top="102" Height="35" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <ComboBox Name="categoria" HorizontalAlignment="Left" VerticalAlignment="Center" Width="248" Grid.Row="3" SelectionChanged="categoria_SelectionChanged_1" Background="#FF1AFF07" Height="35" BorderBrush="{x:Null}" FontSize="14" Canvas.Left="235" Canvas.Top="274"/>
+        <ComboBox Name="estado" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" Width="248" SelectionChanged="estado_SelectionChanged" Background="Black" Height="35" FontSize="18" Canvas.Left="614" Canvas.Top="279"/>
 
 
+        <TextBox x:Name="txt_cantidad" Style="{DynamicResource TextBoxEstilo}" VerticalContentAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" Width="248" Grid.Row="5" Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="18" Canvas.Left="614" Canvas.Top="189" VerticalAlignment="Center" Height="35"/>
 
+        <Border BorderThickness="2" CornerRadius="9" BorderBrush="#FF1AFF07" Height="50" Width="260" Canvas.Left="608" Canvas.Top="183" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <Border BorderThickness="2" CornerRadius="9" BorderBrush="#FF1AFF07" Height="50" Width="260" Canvas.Left="608" Canvas.Top="94" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+        <TextBox Style="{DynamicResource TextBoxEstilo}" x:Name="txt_nombre" TextWrapping="Wrap" VerticalContentAlignment="Center"  Width="248" Grid.Column="1" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Height="35" BorderBrush="{x:Null}" Grid.Row="1" FontSize="18" Canvas.Left="231" Canvas.Top="102" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
-        </Grid.RowDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="70,0,0,2" VerticalAlignment="Bottom" FontSize="20">Codigo:</TextBlock>
-        <ComboBox Name="persona_encargada" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" Width="231" Grid.Column="1" SelectionChanged="persona_encargada_SelectionChanged" Background="Black" Height="39" Margin="73,0,0,0" FontSize="14"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Name="btn_add" Content="Agregar" HorizontalAlignment="Left" Grid.Row="6" Width="174" Click="btn_add_Click" Height="45" VerticalAlignment="Center" Background="#FF1AFF07" BorderBrush="{x:Null}" Foreground="White" FontSize="20" Canvas.Left="578" Canvas.Top="360" />
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Grid.Row="2" Text="Categoria:" Canvas.Left="108" Canvas.Top="283"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Grid.Row="4
+                " Canvas.Left="528" Canvas.Top="283"><Run Text="Estado:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Canvas.Left="9" Canvas.Top="104"><Run Text="Nombre del Elemento:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Grid.Column="1" Text="Persona Encargada:" Grid.Row="2" Canvas.Left="31" Canvas.Top="193"/>
+        <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Grid.Row="4                    " Grid.Column="1" Text="Cantidad:" Grid.RowSpan="2" Canvas.Left="514" Canvas.Top="195" RenderTransformOrigin="0.479,0.602"/>
+        <Button Style="{DynamicResource ButtonStyle2}" x:Name="btn_add_Copiar" Content="Cancelar" HorizontalAlignment="Left" Grid.Row="6" Width="174" Click="btn_add_Click" Height="45" VerticalAlignment="Center" Grid.Column="1" Background="#FF1AFF07" BorderBrush="{x:Null}" Foreground="White" FontSize="20" Canvas.Left="271" Canvas.Top="360" />
 
-        <Border Grid.Row="1" Margin="68,10,10,10" CornerRadius="10" Background="#FF1AFF07">
-            <TextBox Style="{DynamicResource TextBoxEstilo}" x:Name="codigo_txt"  TextWrapping="Wrap"   Width="226" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" TextAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Grid.Row="1" HorizontalContentAlignment="Center"/>
-        </Border>
-        <ComboBox Name="categoria" HorizontalAlignment="Left" VerticalAlignment="Top" Width="236" Grid.Row="3" SelectionChanged="categoria_SelectionChanged_1" Background="#FF1AFF07" Height="39" BorderBrush="{x:Null}" Margin="68,13,0,0" FontSize="14"/>
-        <ComboBox Name="estado" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" Width="236" SelectionChanged="estado_SelectionChanged" Background="Black" Height="39" Margin="68,0,0,0" FontSize="14"/>
-
-        <Border Grid.Row="5" Grid.Column="1" Margin="68,10,10,10" CornerRadius="10" Background="#FF1AFF07">
-
-            <TextBox x:Name="txt_cantidad" Style="{DynamicResource TextBoxEstilo}" VerticalContentAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Width="226" Grid.Row="5" Grid.Column="1" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontSize="18"/>
-        </Border>
-
-        <Border Grid.Row="1" Grid.Column="1" Margin="68,10,10,10" CornerRadius="10" Background="#FF1AFF07">
-
-            <TextBox Style="{DynamicResource TextBoxEstilo}" x:Name="txt_nombre" TextWrapping="Wrap" VerticalContentAlignment="Center"  Width="226" Grid.Column="1" Background="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Height="35" BorderBrush="{x:Null}" Grid.Row="1" FontSize="18"/>
-        </Border>
-
-        <Button Style="{DynamicResource ButtonStyle1}" Name="btn_add" Content="Agregar" HorizontalAlignment="Left" Grid.Row="6" Width="174" Click="btn_add_Click" Height="45" VerticalAlignment="Center" Margin="90,0,0,0" Background="#FF1AFF07" BorderBrush="{x:Null}" Foreground="White" FontSize="20" />
-        <TextBlock HorizontalAlignment="Left" Margin="70,0,0,2" VerticalAlignment="Bottom" FontSize="20" Grid.Row="2" Text="Categoria:"/>
-        <TextBlock HorizontalAlignment="Left" Margin="70,0,0,2" VerticalAlignment="Bottom" FontSize="20" Grid.Row="4
-                "><Run Text="Estado:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="70,0,0,2" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1"><Run Text="Nombre del Elemento:"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="70,0,0,2" VerticalAlignment="Bottom" FontSize="20" Grid.Column="1" Text="Persona Encargada:" Grid.Row="2"/>
-        <TextBlock HorizontalAlignment="Left" Margin="70,29,0,0" VerticalAlignment="Top" FontSize="20" Grid.Row="4                    " Grid.Column="1" Text="Cantidad:" Grid.RowSpan="2"/>
-        <Button Style="{DynamicResource ButtonStyle2}" x:Name="btn_add_Copiar" Content="Cancelar" HorizontalAlignment="Left" Grid.Row="6" Width="174" Click="btn_add_Click" Height="45" VerticalAlignment="Center" Margin="99,0,0,0" Grid.Column="1" Background="#FF1AFF07" BorderBrush="{x:Null}" Foreground="White" FontSize="20" />
-    </Grid>
+    </Canvas>
 </Page>

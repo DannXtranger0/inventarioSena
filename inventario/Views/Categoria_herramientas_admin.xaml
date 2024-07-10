@@ -168,11 +168,11 @@ Grid.Row="1" Grid.RowSpan="2">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="btneliminar"   CommandParameter="{Binding id}" Margin="5">
-                                    <Image Width="16" Source="C:\Users\user\source\repos\sena_inventario\Proyecto_inventario\views\eliminar.png" Margin="0,0,5,0"></Image>
+                                <Button x:Name="btneliminar"  Click="btneliminar_Click_1"    CommandParameter="{Binding id}" Margin="5">
+                                    <Image Width="16" Source="/Views/eliminar.png" Margin="0,0,5,0"></Image>
                                 </Button>
-                                <Button  Name="btneditar" Margin="5" CommandParameter="{Binding id}">
-                                    <Image Width="16" Source="C:\Users\user\source\repos\sena_inventario\Proyecto_inventario\views\editar.png" Margin="0,0,5,0"></Image>
+                                <Button  Name="btneditar" Click="btneditar_Click" Margin="5" CommandParameter="{Binding id}">
+                                    <Image Width="16" Source="/Views/editar.png" Margin="0,0,5,0"></Image>
                                 </Button>
                             </StackPanel>
                         </DataTemplate>
@@ -180,7 +180,7 @@ Grid.Row="1" Grid.RowSpan="2">
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" HorizontalAlignment="Left" Margin="507,0,0,0" VerticalAlignment="Center" Width="246"  Height="47" Background="#FF10CD00" Foreground="White" FontSize="16"  BorderBrush="{x:Null}">
+        <Button Click="btnagregar_Click" Style="{DynamicResource botonAgregarEstilo}" x:Name="btnagregar" HorizontalAlignment="Left" Margin="507,0,0,0" VerticalAlignment="Center" Width="246"  Height="47" Background="#FF10CD00" Foreground="White" FontSize="16"  BorderBrush="{x:Null}">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="40"/>

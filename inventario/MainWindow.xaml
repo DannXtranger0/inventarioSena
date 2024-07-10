@@ -282,7 +282,7 @@
         <Grid x:Name="menu_lateral">
             <Rectangle HorizontalAlignment="Left" Height="584" VerticalAlignment="Center" Width="251" Fill="#FF10CD00"/>
             <StackPanel Margin="0,0,934,0">
-                <Button Style="{DynamicResource ButtonStyle1}" Foreground="{x:Null}" Cursor="Hand"  Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,100,0,8" Width="251" Click="btn_informatica" >
+                <Button Style="{DynamicResource ButtonStyle1}" Foreground="{x:Null}" Cursor="Hand"  Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,100,0,8" Width="251" Click="btn_todos" >
                     <StackPanel Orientation="Horizontal" Width="241" VerticalAlignment="Center" HorizontalAlignment="Left">
                         <Image Source="/categoria_todos.png" Height="54" Margin="20,0,20,0" Width="56"/>
                         <TextBlock FontSize="28" Foreground="White" VerticalAlignment="Center" Text="Todos" />
@@ -294,13 +294,13 @@
                         <TextBlock FontSize="28" Foreground="White" VerticalAlignment="Center" Text="Informatica" />
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyle2}" Foreground="{x:Null}"  Cursor="Hand" Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,8,0,8" >
+                <Button Style="{DynamicResource ButtonStyle2}" Foreground="{x:Null}"  Cursor="Hand" Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,8,0,8" Click="btn_agricultura" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image Source="/categoria_agricultura.png" Height="54" Margin="0,0,6,0" Width="56" RenderTransformOrigin="0.5,0.678" Cursor="Hand"/>
                         <TextBlock FontSize="28" Foreground="White" VerticalAlignment="Center" Text="Agricultura" Cursor="Hand" />
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource ButtonStyletres}" Foreground="{x:Null}" Cursor="Hand" Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,8,0,49" >
+                <Button Style="{DynamicResource ButtonStyletres}" Foreground="{x:Null}" Cursor="Hand" Background="#FF10CD00" BorderBrush="{x:Null}" Height="59" VerticalContentAlignment="Stretch" Padding="0,0,20,0" Margin="0,8,0,49" Click="btn_herramientas" >
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                         <Image Source="/categoria_herramientas.png" Height="54" Margin="0,0,6,0" Width="56" RenderTransformOrigin="0.5,0.678" Cursor="Hand"/>
                         <TextBlock FontSize="28" Foreground="White" VerticalAlignment="Center" Text="Herramientas" />

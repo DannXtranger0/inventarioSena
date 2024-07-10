@@ -165,7 +165,7 @@
             </TextBox>
         </Border>
 
-        <DataGrid Style="{DynamicResource estilosDataGrid}" Name="data_productos_informatica"
+        <DataGrid Style="{DynamicResource estilosDataGrid}" Name="data_productos_herramientas"
                 IsReadOnly="True"
                 CanUserAddRows="False" 
                 CanUserDeleteRows="False" 

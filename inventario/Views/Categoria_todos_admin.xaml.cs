@@ -123,6 +123,6 @@ namespace inventario.Views
             navService?.Navigate(new Agregar_producto());
         }
 
-        
+      
     }
 }

@@ -20,6 +20,8 @@
     <None Remove="logoSena.png" />
     <None Remove="Views\carbon_product.png" />
     <None Remove="Views\categoria_todos.png" />
+    <None Remove="Views\editar.png" />
+    <None Remove="Views\eliminar.png" />
     <None Remove="Views\historial_prestamos.png" />
     <None Remove="Views\icono_agregrar.png" />
     <None Remove="Views\icono_lupa.png" />
@@ -28,7 +30,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -52,6 +53,8 @@
     <Resource Include="logoSena.png" />
     <Resource Include="Views\carbon_product.png" />
     <Resource Include="Views\categoria_todos.png" />
+    <Resource Include="Views\editar.png" />
+    <Resource Include="Views\eliminar.png" />
     <Resource Include="Views\historial_prestamos.png" />
     <Resource Include="Views\icono_agregrar.png" />
     <Resource Include="Views\icono_lupa.png" />

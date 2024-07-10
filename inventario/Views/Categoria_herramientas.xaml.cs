@@ -1,4 +1,5 @@
-﻿using System;
+﻿using inventario.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,67 @@ namespace inventario.Views
         public Categoria_herramientas()
         {
             InitializeComponent();
+            getElementos();
+        }
+
+        public void getElementos()
+        {
+            using (SenaInventarioContext db = new SenaInventarioContext())
+            {
+                var query = from elementos in db.Elementos
+                            join categoria in db.Categorias on elementos.IdCategoria equals categoria.Id
+                            join persona in db.Personas on elementos.IdPersonaEncargada equals persona.Id
+                            join estado in db.EstadoElementos on elementos.IdEstado equals estado.Id
+                            where categoria.NombreCategoria.ToLower() == "Herramientas"
+                            select new
+                            {
+                                id = elementos.Id,
+                                cd = elementos.CodigoElemento,
+                                nm = elementos.NombreElemento,
+                                ec = elementos.Cantidad,
+                                pn = persona.Nombre,
+                                es = estado.NombreEstadoElemento,
+                                cg = categoria.NombreCategoria
+                            };
+                data_productos_herramientas.ItemsSource = query.ToList();
+            }
+        }
+        public void buscarDatos()
+        {
+            var txtbuscar = txtbuscado.Text.Trim(); // Obtener el texto del cuadro de búsqueda
+            using (SenaInventarioContext db = new SenaInventarioContext())
+            {
+                // Construir la consulta con filtro por código y nombre
+                var query = from elementos in db.Elementos
+                            join categoria in db.Categorias on elementos.IdCategoria equals categoria.Id
+                            join persona in db.Personas on elementos.IdPersonaEncargada equals persona.Id
+                            join estado in db.EstadoElementos on elementos.IdEstado equals estado.Id
+                            where categoria.NombreCategoria.ToLower() == "herramientas" &&
+                                  (elementos.CodigoElemento.Contains(txtbuscar) || elementos.NombreElemento.Contains(txtbuscar))
+                            select new
+                            {
+                                id = elementos.Id,
+                                cd = elementos.CodigoElemento,
+                                nm = elementos.NombreElemento,
+                                ec = elementos.Cantidad,
+                                pn = persona.Nombre,
+                                es = estado.NombreEstadoElemento,
+                                cg = categoria.NombreCategoria
+                            };
+                data_productos_herramientas.ItemsSource = query.ToList();
+            }
+        }
+
+
+
+        private void data_productos_informatica_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void txtbuscado_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+            buscarDatos();
         }
     }
 }

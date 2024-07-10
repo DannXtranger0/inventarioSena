@@ -126,5 +126,28 @@ namespace inventario.Views
 
         }
 
+        private void btn_informatica(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_informatica_admin());
+
+        }
+
+        private void btn_todos(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_todos_admin());
+
+        }
+
+        private void btn_agricultura(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_agricultura_admin());
+
+        }
+
+        private void btn_herramientas(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_herramientas_admin());
+
+        }
     }
 }

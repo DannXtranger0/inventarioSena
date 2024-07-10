@@ -102,7 +102,7 @@
 
     </Window.Resources>
 
-    <Grid HorizontalAlignment="Center" Width="954" Background="#FFDBDBDE" Height="506" VerticalAlignment="Center">
+    <Grid HorizontalAlignment="Center" Width="954" Background="White" Height="506" VerticalAlignment="Center">
 
 
         <!-- Primer caja de texto con estilo personalizado -->
@@ -114,7 +114,7 @@
         <Image Source="/logoSena.png" Margin="327,20,368,353"/>
 
         <!-- Primer caja de texto con estilo personalizado -->
-        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="6" Margin="250,224,248,236">
+        <Border BorderBrush="#FF00AF00" BorderThickness="2" CornerRadius="6" Margin="250,224,248,236">
 
         </Border>
         <TextBox Template="{DynamicResource EstiloTextbox}" x:Name="txtUsername"  VerticalContentAlignment="Center" Margin="260,219,257,233" Cursor="IBeam" FontSize="18" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Height="60" Width="436.2" Grid.RowSpan="1" Padding="30,0,0,0">
@@ -127,7 +127,7 @@
 
         <!-- Segunda caja de texto con estilo personalizado -->
 
-        <Border BorderBrush="Black" BorderThickness="2" CornerRadius="6" Margin="252,334,246,126">
+        <Border BorderBrush="#FF00AF00" BorderThickness="2" CornerRadius="6" Margin="252,334,246,126">
 
         </Border>
         <TextBox x:Name="contrasenia_txt" Template="{DynamicResource EstiloTextbox}" VerticalContentAlignment="Center" Margin="262,328,256,124" Cursor="IBeam" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" Width="436" Height="60" Padding="30,0,0,0" BorderBrush="{x:Null}" FontSize="18" >
@@ -145,11 +145,11 @@
         </PasswordBox>
 
         <!-- Botón con estilo personalizado -->
-        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesion" Cursor="Hand" FontSize="22" Style="{StaticResource CustomButtonStyle}" Margin="370,423,410,36" Click="btnIniciarSesion_Click_1" />
+        <Button x:Name="btnIniciarSesion" Content="Iniciar Sesion" Cursor="Hand" FontSize="22" Style="{StaticResource CustomButtonStyle}" Margin="370,423,410,36" Click="btnIniciarSesion_Click_1" Background="#FF00AF00" />
 
         <Label Content="Usuario" FontSize="25" HorizontalAlignment="Left" Margin="248,171,0,0" VerticalAlignment="Top" Width="100" Height="43" />
         <Label Content="Contraseña" FontSize="25" HorizontalAlignment="Left" Margin="248,282,0,0" VerticalAlignment="Top" Height="43" Width="135" />
-        <CheckBox Unchecked="ver_contraseña_Unchecked" Checked="ver_contraseña_Checked" x:Name="ver_contraseña" Content="Ver contraseña" HorizontalAlignment="Left" Margin="729,349,0,0" VerticalAlignment="Top" Height="17" Width="115" />
+        <CheckBox Unchecked="ver_contraseña_Unchecked" Checked="ver_contraseña_Checked" x:Name="ver_contraseña" Content="Ver contraseña" HorizontalAlignment="Left" Margin="729,349,0,0" VerticalAlignment="Top" Height="17" Width="115" BorderBrush="#FF00AF00" />
 
     </Grid>
 

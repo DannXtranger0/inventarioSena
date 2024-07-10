@@ -23,19 +23,29 @@ namespace inventario
             InitializeComponent();
         
             frame_principal.Navigate(new Categoria_todos());
-            
-            Pantalla_portero ventana = new Pantalla_portero(3);
-            ventana.Show();
+      
         }
 
 
-
+        private void btn_todos(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_todos());
+        }
 
         private void btn_informatica(object sender, RoutedEventArgs e)
         {
             frame_principal.Navigate(new Categoria_informatica());
         }
+        private void btn_agricultura(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_agricultura());
 
+        }
+        private void btn_herramientas(object sender, RoutedEventArgs e)
+        {
+            frame_principal.Navigate(new Categoria_herramientas());
+
+        }
         private void btn_iniciar_Click(object sender, RoutedEventArgs e)
         {
             Login login = new Login();
@@ -43,7 +53,7 @@ namespace inventario
             
         }
 
-        
+
     }
 }
 
