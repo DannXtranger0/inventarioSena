@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace inventario.Models;
+namespace inventario.models;
 
 public partial class Prestamo
 {
@@ -11,7 +11,7 @@ public partial class Prestamo
 
     public DateTime FechaHoraPrestamo { get; set; }
 
-    public DateTime FechaLimite { get; set; }
+    public DateOnly? FechaLimite { get; set; }
 
     public int? IdElemento { get; set; }
 

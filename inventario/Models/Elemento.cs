@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace inventario.Models;
+namespace inventario.models;
 
 public partial class Elemento
 {

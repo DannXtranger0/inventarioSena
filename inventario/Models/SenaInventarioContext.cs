@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace inventario.Models;
+namespace inventario.models;
 
 public partial class SenaInventarioContext : DbContext
 {
@@ -167,8 +167,8 @@ public partial class SenaInventarioContext : DbContext
 
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.FechaHoraPrestamo)
-                .IsRowVersion()
-                .IsConcurrencyToken()
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime")
                 .HasColumnName("fecha_hora_prestamo");
             entity.Property(e => e.FechaLimite).HasColumnName("fecha_limite");
             entity.Property(e => e.IdElemento).HasColumnName("id_elemento");
