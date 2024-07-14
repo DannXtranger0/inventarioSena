@@ -1,4 +1,4 @@
-﻿using inventario.Models;
+﻿using inventario.models;
 using inventario.Views;
 using Microsoft.EntityFrameworkCore;
 using System;

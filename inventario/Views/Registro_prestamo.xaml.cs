@@ -1,4 +1,4 @@
-﻿using inventario.Models;
+﻿using inventario.models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.Net.Mail;
 namespace inventario.Views
 {
     /// <summary>
@@ -26,23 +27,24 @@ namespace inventario.Views
         public Registro_prestamo(int userId)
         {
             this.userId = userId;
+           
 
             InitializeComponent();
             DateTime fecha_actual = DateTime.Now;
             fecha_pres.Text = fecha_actual.ToString("yyyy-MM-dd HH:mm:ss");
-            estado_prestamos();
+            //estado_prestamos();
         }
-        public void estado_prestamos()
-        {
-            using (SenaInventarioContext db = new SenaInventarioContext())
-            {
-                var prestamos_estado = db.EstadoElementos.ToList();
-                estado_prestamo.ItemsSource = prestamos_estado;
-                estado_prestamo.SelectedValuePath = "Id";
-                estado_prestamo.DisplayMemberPath = "NombreEstadoElemento";
+        //public void estado_prestamos()
+        //{
+        //    using (SenaInventarioContext db = new SenaInventarioContext())
+        //    {
+        //        var prestamos_estado = db.EstadoElementos.ToList();
+        //        estado_prestamo.ItemsSource = prestamos_estado;
+        //        estado_prestamo.SelectedValuePath = "Id";
+        //        estado_prestamo.DisplayMemberPath = "NombreEstadoElemento";
 
-            }
-        }
+        //    }
+        //}
         private void validar_btn_Click(object sender, RoutedEventArgs e)
         {
             using (SenaInventarioContext db = new SenaInventarioContext())
@@ -93,12 +95,13 @@ namespace inventario.Views
                     }
 
                     // Asignar el estado de
-                    if (estado_prestamo.SelectedItem is EstadoPrestamo selectedEstado)
-                    {
-                        nuevo_prestamo.IdEstadoPrestamo = selectedEstado.Id;
-                    }
+                    //if (estado_prestamo.SelectedItem is EstadoPrestamo selectedEstado)
+                    //{
+                    //    nuevo_prestamo.IdEstadoPrestamo = selectedEstado.Id;
+                    //}
 
                     nuevo_prestamo.IdPersonaPrestamo = personaId;
+                    nuevo_prestamo.IdEstadoPrestamo = 1;
                     nuevo_prestamo.FechaLimite = (DateTime)fecha_devolucion.SelectedDate;
                     nuevo_prestamo.IdElemento = elementoId;
                     nuevo_prestamo.IdFuncionarioAutorizacion = funcionarioAutorizacionId;
@@ -122,10 +125,7 @@ namespace inventario.Views
             }
         }
 
-        private void estado_prestamo_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+     
 
         private void btn_registro_persona(object sender, RoutedEventArgs e)
         {
@@ -133,5 +133,6 @@ namespace inventario.Views
             navService?.Navigate(new Registro_personas_portero());
 
         }
+       
     }
 }

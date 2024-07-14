@@ -153,7 +153,7 @@
 
         <Border Margin="297,13,327,45" BorderBrush="Black" CornerRadius="10" BorderThickness="2" Grid.ColumnSpan="2">
 
-            <TextBox Style="{DynamicResource estilosTextBox}" Grid.Row="0" x:Name="txtbuscado"  Padding="30,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="379" FontSize="20" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="34" RenderTransformOrigin="0.5,0.5">
+            <TextBox Style="{DynamicResource estilosTextBox}" Grid.Row="0" x:Name="txtbuscador"  Padding="30,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="379" FontSize="20" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" Height="34" RenderTransformOrigin="0.5,0.5" TextChanged="txtbuscador_TextChanged">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="1"/>
@@ -170,21 +170,24 @@
             </TextBox>
         </Border>
 
-        <DataGrid Style="{DynamicResource estilosDataGrid}" Name="data_productos_informatica"
+        <DataGrid Style="{DynamicResource estilosDataGrid}" Name="data_productos_historial"
              IsReadOnly="True"
              CanUserAddRows="False" 
              CanUserDeleteRows="False" 
              AutoGenerateColumns="False" 
              Margin="22,78,11,0" 
-             HorizontalScrollBarVisibility="Auto" Height="294" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="3"  >
+             HorizontalScrollBarVisibility="Auto" Height="294" VerticalAlignment="Top" Grid.RowSpan="2" Grid.ColumnSpan="3"  SelectionChanged="data_productos_historial_SelectionChanged ">
 
             <DataGrid.Columns>
+
+                <!--<DataGridTextColumn Header="Id" Binding="{Binding id}" Width="*"/>-->
+                <DataGridTextColumn Header="Documento" Binding="{Binding es}" Width="*"/>
                 <DataGridTextColumn Header="Persona" Binding="{Binding cd}" Width="*"/>
-                <DataGridTextColumn Header="Fecha de Prestamo" Binding="{Binding nm}" Width="*"/>
+                <DataGridTextColumn Header="Fecha de Prestamo" Binding="{Binding ex}" Width="*"/>
                 <DataGridTextColumn Header="Fecha Limite" Binding="{Binding ec}" Width="*"/>
                 <DataGridTextColumn Header="Elemento" Binding="{Binding pn}" Width="*"/>
-                <DataGridTextColumn Header="Estado del Elemento" Binding="{Binding es}" Width="*"/>
-                <DataGridTextColumn Header="Funcionario" Binding="{Binding cg}" Width="*"/>
+                <!--<DataGridTextColumn Header="Estado del Elemento" Binding="{Binding es}" Width="*"/>-->
+                <DataGridTextColumn Header="Funcionario" Binding="{Binding sp}" Width="*"/>
                 <DataGridTextColumn Header="Estado del Prestamo" Binding="{Binding cg}" Width="*"/>
 
 

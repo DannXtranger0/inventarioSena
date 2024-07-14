@@ -166,11 +166,11 @@ public partial class SenaInventarioContext : DbContext
             entity.ToTable("prestamos");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.FechaHoraPrestamo)
+            entity.Property(e => e.FechaLimite).HasColumnName("fecha_limite");
+            entity.Property(e => e.FechahoraPrestamo)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime")
-                .HasColumnName("fecha_hora_prestamo");
-            entity.Property(e => e.FechaLimite).HasColumnName("fecha_limite");
+                .HasColumnName("fechahoraPrestamo");
             entity.Property(e => e.IdElemento).HasColumnName("id_elemento");
             entity.Property(e => e.IdEstadoPrestamo).HasColumnName("id_estado_prestamo");
             entity.Property(e => e.IdFuncionarioAutorizacion).HasColumnName("id_funcionario_autorizacion");

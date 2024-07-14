@@ -9,16 +9,17 @@
       Title="Pantalla_devolucion" Background="White">
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="160,132,0,0" TextWrapping="Wrap" Text="Estado del Prestamo" VerticalAlignment="Top" Foreground="Black" FontSize="20"/>
-        <ComboBox HorizontalAlignment="Left" Margin="160,168,0,0" Text="Seleccione el estado del Prestamo" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.5,0.5" Height="33" Foreground="Black">
+        <ComboBox HorizontalAlignment="Left" Name="combo_prestamo" Margin="160,168,0,0" Text="Seleccione el estado del Prestamo" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.5,0.5" Height="33" Foreground="Black">
 
 
         </ComboBox>
         <TextBlock HorizontalAlignment="Left" Margin="160,278,0,0" TextWrapping="Wrap" Text="Estado del Elemento" VerticalAlignment="Top" Foreground="Black" FontSize="20"/>
         <ComboBox HorizontalAlignment="Left" Margin="160,314,0,0" Text="Seleccione el estado del Elemento" VerticalAlignment="Top" Width="255" RenderTransformOrigin="0.5,0.5" Height="33" Foreground="Black"/>
         <TextBlock HorizontalAlignment="Left" Margin="734,132,0,0" TextWrapping="Wrap" Text="Persona que se le prestó el elemento" VerticalAlignment="Top" Foreground="Black" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="847,171,0,0" TextWrapping="Wrap" Text="&lt;persona&gt;" VerticalAlignment="Top" Foreground="Black" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="790,171,0,0" TextWrapping="Wrap" Text="{Binding nombre}" Name="tex_persona_prestamo" VerticalAlignment="Top" Foreground="Black" FontSize="20" Width="249"/>
         <TextBlock HorizontalAlignment="Left" Margin="734,278,0,0" TextWrapping="Wrap" Text="Funcionario que autorizó el prestamo" VerticalAlignment="Top" Foreground="#FF030303" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="833,317,0,0" TextWrapping="Wrap" Text="&lt;funcionario&gt;" VerticalAlignment="Top" Foreground="#FF030303" FontSize="20"/>
+        <Button Content="Cancelar prestamo" Name="btncanecelar" HorizontalAlignment="Left" Margin="558,393,0,0" VerticalAlignment="Top" Width="141" Height="33" Click="btncanecelar_Click"/>
 
 
     </Grid>

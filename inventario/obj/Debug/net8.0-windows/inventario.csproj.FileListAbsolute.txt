@@ -652,3 +652,5 @@ C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Pantalla_
 C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_prestamo.baml
 C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_personas_portero.g.cs
 C:\Users\Dann\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_personas_portero.baml
+C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_personas_portero.g.cs
+C:\Users\user\source\repos\inventarioSena\inventario\obj\Debug\net8.0-windows\Views\Registro_personas_portero.baml
