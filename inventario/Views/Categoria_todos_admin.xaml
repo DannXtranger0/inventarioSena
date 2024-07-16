@@ -134,7 +134,7 @@
 
             <Border BorderBrush="Black" BorderThickness="2" CornerRadius="8" Margin="35,-4,442,0" Grid.Column="2">
 
-                <TextBox Style="{DynamicResource estiloTextBox}"  Grid.Column="2" Grid.Row="0" x:Name="txtbuscado" Margin="4,1,8,1" BorderBrush="{x:Null}" Padding="30,0,0,0"  SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="20">
+                <TextBox Style="{DynamicResource estiloTextBox}"  Grid.Column="2" Grid.Row="0" x:Name="txtbuscado" Margin="4,1,8,1" BorderBrush="{x:Null}" Padding="30,0,0,0"  SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" VerticalContentAlignment="Center" FontSize="20" TextChanged="txtbuscado_TextChanged">
                     <TextBox.Background>
                         <ImageBrush ImageSource="/Views/icono_lupa.png"
                                 Stretch="None"

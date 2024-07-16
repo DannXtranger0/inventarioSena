@@ -123,6 +123,9 @@ namespace inventario.Views
             navService?.Navigate(new Agregar_producto());
         }
 
-      
+        private void txtbuscado_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            buscarDatos();
+        }
     }
 }

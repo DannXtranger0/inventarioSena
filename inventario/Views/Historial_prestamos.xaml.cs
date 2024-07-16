@@ -25,39 +25,93 @@ namespace inventario.Views
         public Historial_prestamos()
         {
             InitializeComponent();
+            CargarDatos();
         }
-        //public void buscar_documento()
-        //{
-        //    string documento = txtbuscado.Text.Trim();
-        //    using (SenaInventarioContext db = new SenaInventarioContext())
-        //    {
-        //        var consulta = from persona in db.Personas
-        //                       join prestamo in db.Prestamos on persona.Id equals prestamo.IdPersonaPrestamo
-        //                       join elemento in db.Elementos on prestamo.IdElemento equals elemento.Id
-        //                       join estado_elemento in db.EstadoElementos on elemento.IdEstado equals estado_elemento.Id
-        //                       join estado_prestamo in db.EstadoPrestamos on prestamo.IdEstadoPrestamo equals estado_prestamo.Id
-        //                       where persona.NumeroDocumento.ToLower() == documento.ToLower()
-        //                       select new
-        //                       {
-        //                           cd = persona.Nombre,
-        //                           nm = prestamo.FechaHoraPrestamo,
-        //                           ec = prestamo.FechaLimite,
-        //                           pn= elemento.NombreElemento,
-        //                           es = estado_elemento.NombreEstadoElemento,
-        //                           cg = db.Personas.FirstOrDefault(p => p.Id == elemento.IdPersonaEncargada)?.Nombre,
-        //                           ep =estado_prestamo.NombreEstadoPrestamo
-                                 
-        //                       };
+        public void CargarDatos()
+        {
+            using (SenaInventarioContext db = new SenaInventarioContext())
+            {
+                var datos = from prestamo in db.Prestamos
+                            join estado_prestamo in db.EstadoPrestamos on prestamo.IdEstadoPrestamo equals estado_prestamo.Id
+                            join persona in db.Personas on prestamo.IdPersonaPrestamo equals persona.Id
+                            join elemento in db.Elementos on prestamo.IdElemento equals elemento.Id
+                            select new
+                            {
+                                id = prestamo.Id,
+                                es = persona.NumeroDocumento,
+                                cd = persona.Nombre,
+                                ex = prestamo.FechahoraPrestamo,
+                                ec = prestamo.FechaLimite.ToString("yyyy-MM-dd"),
+                                pn = elemento.NombreElemento,
+                                cg = estado_prestamo.NombreEstadoPrestamo,
+                                sp = db.Personas.Where(p => p.Id == prestamo.IdElemento).Select(p => p.Nombre).FirstOrDefault()
 
-        //        datagrid_historial.ItemsSource = consulta.ToList();
-        //    }
-        //}
+                            };
 
-        //obtener id del datagrid para que modificar el estado del prestamo del producto
+                datagridhistorial.ItemsSource = datos.ToList();
+            }
+        }
+
+       
+
+        private void data_productos_historial_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+        }
+
         private void txtbuscado_TextChanged(object sender, TextChangedEventArgs e)
         {
-            //buscar_documento();
 
+            var buscar = txtbuscado.Text.Trim();
+            using (SenaInventarioContext db = new SenaInventarioContext())
+            {
+                var datos = from prestamo in db.Prestamos
+                            join estado_prestamo in db.EstadoPrestamos on prestamo.IdEstadoPrestamo equals estado_prestamo.Id
+                            join persona in db.Personas on prestamo.IdPersonaPrestamo equals persona.Id
+                            join elemento in db.Elementos on prestamo.IdElemento equals elemento.Id
+                            where persona.NumeroDocumento.Contains(buscar) || persona.Nombre.Contains(buscar)
+                            select new
+                            {
+                                id = prestamo.Id,
+                                es = persona.NumeroDocumento,
+                                cd = persona.Nombre,
+                                ex = prestamo.FechahoraPrestamo,
+                                ec = prestamo.FechaLimite.ToString("yyyy-MM-dd"),
+                                pn = elemento.NombreElemento,
+                                cg = estado_prestamo.NombreEstadoPrestamo,
+                                sp = db.Personas.Where(p => p.Id == prestamo.IdElemento).Select(p => p.Nombre).FirstOrDefault()
+
+
+                            };
+                datagridhistorial.ItemsSource = datos.ToList();
+            }
+        }
+
+        private void datagridhistorial_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+            try
+            {
+                using (SenaInventarioContext db = new SenaInventarioContext())
+                {
+                    if (datagridhistorial.SelectedItem != null)
+                    {
+                        int id = (int)((dynamic)datagridhistorial.SelectedItem).id;
+                        NavigationService navService = NavigationService.GetNavigationService(this);
+                        navService?.Navigate(new Pantalla_devolucion(id));
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se seleccionó ningún registro.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
-}
+ 
+    }
+

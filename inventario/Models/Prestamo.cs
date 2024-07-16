@@ -11,13 +11,13 @@ public partial class Prestamo
 
     public DateTime FechaLimite { get; set; }
 
-    public int? IdElemento { get; set; }
+    public int IdElemento { get; set; }
 
-    public int? IdEstadoPrestamo { get; set; }
+    public int IdEstadoPrestamo { get; set; }
 
-    public int? IdFuncionarioAutorizacion { get; set; }
+    public int IdFuncionarioAutorizacion { get; set; }
 
-    public int? IdPortero { get; set; }
+    public int IdPortero { get; set; }
 
     public DateTime FechahoraPrestamo { get; set; }
 

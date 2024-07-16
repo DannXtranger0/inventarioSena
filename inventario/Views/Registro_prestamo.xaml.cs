@@ -24,6 +24,7 @@ namespace inventario.Views
     public partial class Registro_prestamo : Page
     {
         private int userId;
+        private const int estado_ini = 1;
         public Registro_prestamo(int userId)
         {
             this.userId = userId;
@@ -32,20 +33,19 @@ namespace inventario.Views
             InitializeComponent();
             DateTime fecha_actual = DateTime.Now;
             fecha_pres.Text = fecha_actual.ToString("yyyy-MM-dd HH:mm:ss");
-            //estado_prestamos();
+            
         }
-        //public void estado_prestamos()
-        //{
-        //    using (SenaInventarioContext db = new SenaInventarioContext())
-        //    {
-        //        var prestamos_estado = db.EstadoElementos.ToList();
-        //        estado_prestamo.ItemsSource = prestamos_estado;
-        //        estado_prestamo.SelectedValuePath = "Id";
-        //        estado_prestamo.DisplayMemberPath = "NombreEstadoElemento";
+       
 
-        //    }
-        //}
-        private void validar_btn_Click(object sender, RoutedEventArgs e)
+
+        private void btn_registro_persona(object sender, RoutedEventArgs e)
+        {
+            NavigationService navService = NavigationService.GetNavigationService(this);
+            navService?.Navigate(new Registro_personas_portero());
+
+        }
+
+        private void validar_btn_Click_1(object sender, RoutedEventArgs e)
         {
             using (SenaInventarioContext db = new SenaInventarioContext())
             {
@@ -72,7 +72,7 @@ namespace inventario.Views
                 }
 
                 // Obtener el ID del funcionario a partir del número de documento
-                int funcionarioAutorizacionId = db.Personas.Where(p => p.NumeroDocumento == documento_fun.Text)
+                var funcionarioAutorizacionId = db.Personas.Where(p => p.NumeroDocumento == txtdocuemnto_fun.Text)
                                                           .Select(p => p.Id)
                                                           .FirstOrDefault();
                 if (funcionarioAutorizacionId == 0)
@@ -94,20 +94,16 @@ namespace inventario.Views
                         return;
                     }
 
-                    // Asignar el estado de
-                    //if (estado_prestamo.SelectedItem is EstadoPrestamo selectedEstado)
-                    //{
-                    //    nuevo_prestamo.IdEstadoPrestamo = selectedEstado.Id;
-                    //}
-
                     nuevo_prestamo.IdPersonaPrestamo = personaId;
-                    nuevo_prestamo.IdEstadoPrestamo = 1;
                     nuevo_prestamo.FechaLimite = (DateTime)fecha_devolucion.SelectedDate;
+                    nuevo_prestamo.IdEstadoPrestamo = estado_ini;
                     nuevo_prestamo.IdElemento = elementoId;
                     nuevo_prestamo.IdFuncionarioAutorizacion = funcionarioAutorizacionId;
                     nuevo_prestamo.IdPortero = userId;
+
                     db.Prestamos.Add(nuevo_prestamo);
                     db.SaveChanges();
+
                     MessageBox.Show("Se ha realizado el préstamo");
                 }
                 catch (ArgumentNullException ex)
@@ -124,15 +120,5 @@ namespace inventario.Views
                 }
             }
         }
-
-     
-
-        private void btn_registro_persona(object sender, RoutedEventArgs e)
-        {
-            NavigationService navService = NavigationService.GetNavigationService(this);
-            navService?.Navigate(new Registro_personas_portero());
-
-        }
-       
     }
 }

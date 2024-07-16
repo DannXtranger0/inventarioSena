@@ -165,8 +165,8 @@
         <Label Content="Fecha Devolución" FontSize="18" HorizontalAlignment="Left" Margin="126,233,0,0" VerticalAlignment="Top"/>
         <DatePicker Name="fecha_devolucion" HorizontalAlignment="Left" Margin="128,267,0,0" VerticalAlignment="Top" Width="274" Height="35" Background="#FFEDECEC"/>
         <Label Content="Documento Funcionario" FontSize="18" HorizontalAlignment="Left" Margin="791,233,0,0" VerticalAlignment="Top"/>
-        <TextBox  Template="{DynamicResource EstiloTextBox}" HorizontalAlignment="Left" Name="documento_fun" Margin="791,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="35"  Style="{StaticResource conbocaja}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="18"/>
-        <Button Content="Validar" Name="validar_btn"  FontSize="20" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" Width="164" Height="43"  Style="{StaticResource boton2}"  Click="validar_btn_Click"/>
+        <TextBox  Template="{DynamicResource EstiloTextBox}" HorizontalAlignment="Left" Name="txtdocuemnto_fun" Margin="791,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" Height="35"  Style="{StaticResource conbocaja}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" BorderBrush="{x:Null}" Background="{x:Null}" FontSize="18"/>
+        <Button Content="Validar" Name="validar_btn"  FontSize="20" HorizontalAlignment="Center" Margin="0,378,0,0" VerticalAlignment="Top" Width="164" Height="43"  Style="{StaticResource boton2}" Click="validar_btn_Click_1"  />
         <Button Style="{DynamicResource estilobotonsitonnegro}" Content="Resgistrar Persona" FontSize="12" Margin="154,367,906,0" VerticalAlignment="Top" Height="33"   Background="{x:Null}" Foreground="Black" BorderThickness="1.6" BorderBrush="#FF262626" Click="btn_registro_persona"/>
         <TextBlock   HorizontalAlignment="Left"  Margin="127,334,0,0" TextWrapping="Wrap" TextAlignment="Center" Text="La persona no está registrada?" VerticalAlignment="Top" Width="195"/>
         <Border BorderBrush="#FF10CD00" BorderThickness="2" CornerRadius="6" Margin="125,176,791,226"/>

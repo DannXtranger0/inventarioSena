@@ -48,7 +48,8 @@ namespace inventario.Views
                                 ec = prestamo.FechaLimite.ToString("yyyy-MM-dd"),
                                 pn = elemento.NombreElemento,
                                 cg = estado_prestamo.NombreEstadoPrestamo,
-                                sp = db.Personas.Where(p => p.Id == elemento.IdPersonaEncargada).Select(p => p.Nombre).FirstOrDefault()
+                                sp = db.Personas.Where(p => p.Id == prestamo.IdElemento).Select(p => p.Nombre).FirstOrDefault()
+
                             };
 
                 data_productos_historial.ItemsSource = datos.ToList();
@@ -75,10 +76,11 @@ namespace inventario.Views
                                 ec = prestamo.FechaLimite.ToString("yyyy-MM-dd"),
                                 pn = elemento.NombreElemento,
                                 cg = estado_prestamo.NombreEstadoPrestamo,
-                                sp = db.Personas.Where(p => p.Id == elemento.IdPersonaEncargada).Select(p => p.Nombre).FirstOrDefault()
-                            };
+                                sp = db.Personas.Where(p => p.Id == prestamo.IdElemento).Select(p => p.Nombre).FirstOrDefault()
 
-                data_productos_historial.ItemsSource = datos.ToList();
+
+                            };
+                              data_productos_historial.ItemsSource = datos.ToList();
             }
         }
 

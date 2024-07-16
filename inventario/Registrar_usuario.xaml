@@ -132,7 +132,7 @@
         BorderThickness="1"
         Padding="5"
         FontSize="14"
-        FontWeight="Bold" Height="39" Canvas.Left="500" Canvas.Top="399"/>
+        FontWeight="Bold" Height="39" Canvas.Left="500" Canvas.Top="399" Click="btn_registro_Click_1"/>
         <ComboBox Name="roles_usuario" Canvas.Left="147" Canvas.Top="336" Width="292" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top"/>
     </Canvas>
 

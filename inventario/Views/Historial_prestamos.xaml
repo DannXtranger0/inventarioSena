@@ -165,22 +165,25 @@
             </TextBox>
         </Border>
 
-        <DataGrid Style="{DynamicResource estilosDataGrid}" Name="datagrid_historial"
+        <DataGrid Style="{DynamicResource estilosDataGrid}" Name="datagridhistorial"
              IsReadOnly="True"
              CanUserAddRows="False" 
              CanUserDeleteRows="False" 
              AutoGenerateColumns="False" 
              Margin="22,11,11,0" 
-             HorizontalScrollBarVisibility="Auto" Height="294" VerticalAlignment="Top" Grid.Row="1"  >
+             HorizontalScrollBarVisibility="Auto" Height="294" VerticalAlignment="Top" Grid.Row="1" SelectionChanged="datagridhistorial_SelectionChanged"  >
 
             <DataGrid.Columns>
+                <!--<DataGridTextColumn Header="Id" Binding="{Binding id}" Width="*"/>-->
+                <DataGridTextColumn Header="Documento" Binding="{Binding es}" Width="*"/>
                 <DataGridTextColumn Header="Persona" Binding="{Binding cd}" Width="*"/>
-                <DataGridTextColumn Header="Fecha de Prestamo" Binding="{Binding nm}" Width="*"/>
+                <DataGridTextColumn Header="Fecha de Prestamo" Binding="{Binding ex}" Width="*"/>
                 <DataGridTextColumn Header="Fecha Limite" Binding="{Binding ec}" Width="*"/>
                 <DataGridTextColumn Header="Elemento" Binding="{Binding pn}" Width="*"/>
-                <DataGridTextColumn Header="Estado del Elemento" Binding="{Binding es}" Width="*"/>
-                <DataGridTextColumn Header="Funcionario" Binding="{Binding cg}" Width="*"/>
-                <DataGridTextColumn Header="Estado del Prestamo" Binding="{Binding ep}" Width="*"/>
+                <!--<DataGridTextColumn Header="Estado del Elemento" Binding="{Binding es}" Width="*"/>-->
+                <DataGridTextColumn Header="Funcionario" Binding="{Binding sp}" Width="*"/>
+                <DataGridTextColumn Header="Estado del Prestamo" Binding="{Binding cg}" Width="*"/>
+
 
 
 

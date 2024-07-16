@@ -28,7 +28,7 @@ namespace inventario.Views
              
 
             InitializeComponent();
-            frame_principal.Navigate(new Registro_prestamo(1));
+            frame_principal.Navigate(new Registro_prestamo(id_usuario));
         }
 
         private void btn_hidtorial_Click(object sender, RoutedEventArgs e)

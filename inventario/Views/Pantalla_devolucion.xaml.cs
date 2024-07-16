@@ -54,6 +54,8 @@ namespace inventario.Views
             {
                 var producto = db.Prestamos.Find(_prestamoId); // Pasar filtro
 
+                //var elemento=db.Elementos.Find(_prestamoId);
+
                 // Obtener el nombre de la persona asociada al préstamo
                 var personaNombre = db.Personas.Where(p => p.Id == producto.IdPersonaPrestamo)
                                               .Select(p => p.Nombre)
@@ -66,6 +68,15 @@ namespace inventario.Views
 
                 // Asignar el nombre de la persona al control de texto
                 tex_persona_prestamo.Text = personaNombre;
+
+
+               var funcionarioNombre=db.Personas.Where(t=>t.Id==producto.IdElemento)
+                                               .Select(t=>t.Nombre)
+                                               .FirstOrDefault();
+
+                txtfuncionario.Text = funcionarioNombre;
+
+
             }
         }
         private void btncanecelar_Click(object sender, RoutedEventArgs e)
@@ -79,7 +90,7 @@ namespace inventario.Views
                
 
                 db.SaveChanges();
-                MessageBox.Show("Devolucion cancelada con ", "Éxito", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Devolucion cancelada con  exito", "", MessageBoxButton.OK, MessageBoxImage.Information);
                 NavigationService navService = NavigationService.GetNavigationService(this);
                 navService?.Navigate(new Historial_prestamo_portero());
             }

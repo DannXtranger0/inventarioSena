@@ -34,7 +34,7 @@ namespace inventario
         {
             contrasenia_show.Visibility = Visibility.Visible;
             contrasenia_txt.Visibility = Visibility.Collapsed;
-            contrasenia_show.Password = contrasenia_txt.Text; // Sincronizar el valor
+            contrasenia_show.Password = contrasenia_txt.Text; // S
         }
 
         private void ver_contraseña_Checked(object sender, RoutedEventArgs e)
@@ -77,7 +77,7 @@ namespace inventario
                                 pantallaAdmin.Show();
                                 this.Close();
                             }
-                            else if (rol.NombreRol == "portero")
+                            else if (rol.NombreRol == "Portero")
                             {
                                 //redirigir al portero
                                 Pantalla_portero pantalla_Portero = new Pantalla_portero(id_usuario);
